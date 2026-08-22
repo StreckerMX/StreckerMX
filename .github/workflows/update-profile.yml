@@ -8,8 +8,7 @@ on:
     branches:
       - main
     paths:
-      - "assets/profile-hero.template.svg"
-      - ".github/scripts/update_profile.py"
+      - ".github/scripts/profile_v3.py"
       - ".github/workflows/update-profile.yml"
 
 permissions:
@@ -36,7 +35,7 @@ jobs:
       - name: Generate live profile SVG
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python .github/scripts/update_profile.py
+        run: python .github/scripts/profile_v3.py
 
       - name: Commit changed telemetry
         shell: bash

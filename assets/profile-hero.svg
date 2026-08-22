@@ -1,119 +1,152 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-labelledby="title desc">
-  <title id="title">Strecker developer profile</title>
-  <desc id="desc">Animated dark technical dashboard introducing Strecker, focused on Windows software, performance, automation and local AI.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" role="img" aria-labelledby="title desc">
+  <title id="title">Strecker profile hero</title>
+  <desc id="desc">Animated dark dashboard style profile hero for Strecker, with one-time type-in text and a subtle green scan line.</desc>
 
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#080A0C"/>
+      <stop offset="0" stop-color="#07090C"/>
       <stop offset="0.55" stop-color="#0D1117"/>
-      <stop offset="1" stop-color="#101510"/>
+      <stop offset="1" stop-color="#101410"/>
     </linearGradient>
-    <linearGradient id="greenGlow" x1="0" y1="0" x2="1" y2="0">
+
+    <linearGradient id="scanGradient" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#76B900" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#76B900" stop-opacity="0.9"/>
+      <stop offset="0.35" stop-color="#76B900" stop-opacity="0.04"/>
+      <stop offset="0.5" stop-color="#76B900" stop-opacity="0.18"/>
+      <stop offset="0.65" stop-color="#76B900" stop-opacity="0.04"/>
       <stop offset="1" stop-color="#76B900" stop-opacity="0"/>
     </linearGradient>
+
     <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#14191F"/>
+      <stop offset="0" stop-color="#131920"/>
       <stop offset="1" stop-color="#0F1318"/>
     </linearGradient>
+
     <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
-    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M32 0H0V32" fill="none" stroke="#1C2229" stroke-width="1" opacity="0.7"/>
-    </pattern>
-    <clipPath id="screenClip"><rect x="36" y="32" width="1128" height="406" rx="16"/></clipPath>
+
+    <style>
+      .sans { font-family: Inter, Segoe UI, Arial, sans-serif; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      .fg { fill: #F2F5F7; }
+      .muted { fill: #97A4B2; }
+      .dim { fill: #6F7D8B; }
+      .green { fill: #76B900; }
+      .green-stroke { stroke: #76B900; }
+      .panel-stroke { stroke: rgba(255,255,255,0.08); }
+      .micro { font-size: 12px; letter-spacing: 0.12em; }
+      .small { font-size: 15px; letter-spacing: 0.02em; }
+      .label { font-size: 13px; letter-spacing: 0.12em; }
+      .value { font-size: 17px; font-weight: 600; }
+      .headline { font-size: 66px; font-weight: 700; }
+      .subheadline { font-size: 21px; letter-spacing: 0.11em; }
+      .section { font-size: 19px; font-weight: 600; }
+      .body { font-size: 18px; }
+      .terminalPrompt { font-size: 24px; font-weight: 600; }
+      .terminalText { font-size: 20px; }
+    </style>
+
+    <clipPath id="t1"><rect x="54" y="234" width="0" height="30"><animate attributeName="width" from="0" to="122" begin="0.45s" dur="0.55s" fill="freeze" /></rect></clipPath>
+    <clipPath id="t2"><rect x="72" y="272" width="0" height="28"><animate attributeName="width" from="0" to="468" begin="1.05s" dur="1.15s" fill="freeze" /></rect></clipPath>
+    <clipPath id="t3"><rect x="54" y="342" width="0" height="30"><animate attributeName="width" from="0" to="145" begin="2.05s" dur="0.7s" fill="freeze" /></rect></clipPath>
+    <clipPath id="t4"><rect x="72" y="380" width="0" height="28"><animate attributeName="width" from="0" to="452" begin="2.78s" dur="1.15s" fill="freeze" /></rect></clipPath>
+    <clipPath id="t5"><rect x="54" y="450" width="0" height="30"><animate attributeName="width" from="0" to="184" begin="4.1s" dur="0.82s" fill="freeze" /></rect></clipPath>
+    <clipPath id="t6"><rect x="72" y="488" width="0" height="28"><animate attributeName="width" from="0" to="377" begin="4.98s" dur="1.0s" fill="freeze" /></rect></clipPath>
+    <clipPath id="t7"><rect x="54" y="558" width="0" height="30"><animate attributeName="width" from="0" to="218" begin="6.15s" dur="0.85s" fill="freeze" /></rect></clipPath>
+    <clipPath id="t8"><rect x="72" y="596" width="0" height="28"><animate attributeName="width" from="0" to="332" begin="7.08s" dur="1.0s" fill="freeze" /></rect></clipPath>
+    <clipPath id="t9"><rect x="54" y="666" width="0" height="30"><animate attributeName="width" from="0" to="136" begin="8.1s" dur="0.62s" fill="freeze" /></rect></clipPath>
+    <clipPath id="t10"><rect x="72" y="704" width="0" height="28"><animate attributeName="width" from="0" to="596" begin="8.82s" dur="1.45s" fill="freeze" /></rect></clipPath>
   </defs>
 
-  <style>
-    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
-    .sans { font-family: Inter, Segoe UI, Arial, sans-serif; }
-    .muted { fill: #8B949E; }
-    .bright { fill: #F0F6FC; }
-    .accent { fill: #76B900; }
-    .thin { stroke: #30363D; stroke-width: 1; }
+  <rect width="1200" height="860" rx="24" fill="url(#bg)"/>
+  <rect x="1.5" y="1.5" width="1197" height="857" rx="22.5" fill="none" stroke="rgba(118,185,0,0.18)"/>
+  <rect x="18" y="18" width="1164" height="824" rx="20" fill="none" stroke="rgba(255,255,255,0.06)"/>
 
-    @keyframes pulse { 0%,100% { opacity:.35 } 50% { opacity:1 } }
-    @keyframes blink { 0%,48% { opacity:1 } 49%,100% { opacity:0 } }
-    @keyframes scan { from { transform: translateX(-850px) } to { transform: translateX(1450px) } }
-    @keyframes dash { to { stroke-dashoffset:-44 } }
-    @keyframes reveal1 { 0%,6% { opacity:0; transform:translateY(6px)} 12%,100% {opacity:1; transform:translateY(0)} }
-    @keyframes reveal2 { 0%,18% { opacity:0; transform:translateY(6px)} 24%,100% {opacity:1; transform:translateY(0)} }
-    @keyframes reveal3 { 0%,30% { opacity:0; transform:translateY(6px)} 36%,100% {opacity:1; transform:translateY(0)} }
-    @keyframes waveform { 0%,100% { transform:translateY(0)} 50% {transform:translateY(-4px)} }
-    @keyframes nodePulse { 0%,100% { r:2; opacity:.45 } 50% { r:4; opacity:1 } }
+  <rect x="-300" y="0" width="300" height="860" fill="url(#scanGradient)">
+    <animate attributeName="x" from="-300" to="1500" dur="14s" repeatCount="indefinite" />
+  </rect>
 
-    .scan { animation: scan 6.5s linear infinite; }
-    .dash { stroke-dasharray: 6 8; animation: dash 2.4s linear infinite; }
-    .r1 { animation: reveal1 8s ease infinite; }
-    .r2 { animation: reveal2 8s ease infinite; }
-    .r3 { animation: reveal3 8s ease infinite; }
-    .cursor { animation: blink 1s step-end infinite; }
-    .status { animation: pulse 2.2s ease-in-out infinite; }
-    .wave { animation: waveform 2.8s ease-in-out infinite; transform-origin:center; }
-    .node { animation: nodePulse 2.6s ease-in-out infinite; }
-  </style>
+  <circle cx="46" cy="40" r="5" fill="#374151"/>
+  <circle cx="64" cy="40" r="5" fill="#2E3A46"/>
+  <circle cx="82" cy="40" r="5" fill="#23303B"/>
+  <text x="112" y="45" class="mono muted small">strecker@github: ~/profile</text>
+  <circle cx="1046" cy="39" r="5" fill="#76B900" filter="url(#softGlow)"/>
+  <text x="1060" y="45" class="mono green small">ONLINE</text>
+  <text x="1135" y="45" class="mono dim small" text-anchor="end">v3.0</text>
+  <line x1="34" y1="60" x2="1166" y2="60" stroke="rgba(255,255,255,0.08)"/>
 
-  <rect width="1200" height="470" rx="22" fill="url(#bg)"/>
-  <rect x="18" y="18" width="1164" height="434" rx="20" fill="none" stroke="#21262D"/>
-  <rect x="36" y="32" width="1128" height="406" rx="16" fill="url(#panel)" stroke="#30363D"/>
-  <g clip-path="url(#screenClip)">
-    <rect x="36" y="32" width="1128" height="406" fill="url(#grid)" opacity="0.5"/>
-    <rect class="scan" x="-420" y="32" width="360" height="406" fill="url(#greenGlow)" opacity="0.10"/>
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="0s" dur="0.4s" fill="freeze"/>
+    <text x="54" y="118" class="sans fg headline">Strecker</text>
+    <rect x="54" y="136" width="118" height="7" rx="3.5" fill="#76B900"/>
+    <text x="54" y="182" class="mono muted subheadline">WINDOWS SOFTWARE / PERFORMANCE / AUTOMATION / LOCAL AI</text>
   </g>
 
-  <circle cx="62" cy="57" r="5" fill="#30363D"/>
-  <circle cx="80" cy="57" r="5" fill="#30363D"/>
-  <circle cx="98" cy="57" r="5" fill="#30363D"/>
-  <text x="124" y="62" class="mono muted" font-size="13">strecker@github: ~/profile</text>
-  <circle cx="1040" cy="57" r="4" fill="#76B900" class="status" filter="url(#softGlow)"/>
-  <text x="1053" y="62" class="mono" fill="#A7D75B" font-size="12">ONLINE</text>
-  <text x="1120" y="62" class="mono muted" font-size="12">v2.0</text>
-  <line x1="54" y1="80" x2="1146" y2="80" class="thin"/>
-
-  <text x="72" y="138" class="sans bright" font-size="54" font-weight="700" letter-spacing="-1">Strecker</text>
-  <rect x="72" y="154" width="90" height="4" rx="2" fill="#76B900"/>
-  <text x="72" y="188" class="mono muted" font-size="15">WINDOWS SOFTWARE  /  PERFORMANCE  /  AUTOMATION  /  LOCAL AI</text>
-
-  <g transform="translate(72 226)">
-    <text x="0" y="0" class="mono accent" font-size="15">$</text>
-    <text x="20" y="0" class="mono bright r1" font-size="15">whoami</text>
-    <text x="0" y="28" class="mono muted r1" font-size="14">developer focused on fast, practical desktop tools</text>
-
-    <text x="0" y="70" class="mono accent r2" font-size="15">$</text>
-    <text x="20" y="70" class="mono bright r2" font-size="15">cat focus.txt</text>
-    <text x="0" y="98" class="mono muted r2" font-size="14">C# · .NET · WPF · performance analysis · local AI</text>
-
-    <text x="0" y="140" class="mono accent r3" font-size="15">$</text>
-    <text x="20" y="140" class="mono bright r3" font-size="15">status --current</text>
-    <text x="0" y="168" class="mono r3" fill="#A7D75B" font-size="14">building, measuring, refining</text>
-    <rect x="231" y="154" width="8" height="18" class="cursor r3" fill="#76B900"/>
+  <g>
+    <text x="54" y="258" class="mono green terminalPrompt" clip-path="url(#t1)">$ whoami</text>
+    <text x="72" y="294" class="mono muted terminalText" clip-path="url(#t2)">developer focused on fast, practical desktop tools</text>
+    <text x="54" y="366" class="mono green terminalPrompt" clip-path="url(#t3)">$ focus.list</text>
+    <text x="72" y="402" class="mono muted terminalText" clip-path="url(#t4)">Windows apps · performance analysis · automation · local AI</text>
+    <text x="54" y="474" class="mono green terminalPrompt" clip-path="url(#t5)">$ stack --core</text>
+    <text x="72" y="510" class="mono muted terminalText" clip-path="url(#t6)">C# · .NET 10 · WPF · Python · PowerShell · GitHub Actions</text>
+    <text x="54" y="582" class="mono green terminalPrompt" clip-path="url(#t7)">$ featured_work</text>
+    <text x="72" y="618" class="mono muted terminalText" clip-path="url(#t8)">FrameView Analyzer — benchmark analysis workspace for Windows</text>
+    <text x="54" y="690" class="mono green terminalPrompt" clip-path="url(#t9)">$ status</text>
+    <text x="72" y="726" class="mono green terminalText" clip-path="url(#t10)">building, measuring, refining<span> </span></text>
   </g>
 
-  <g transform="translate(790 112)">
-    <rect width="326" height="232" rx="14" fill="#0B0F13" stroke="#30363D"/>
-    <text x="22" y="32" class="mono muted" font-size="12">DEV TELEMETRY</text>
-    <text x="278" y="32" class="mono accent" font-size="12">LIVE</text>
-    <line x1="22" y1="46" x2="304" y2="46" class="thin"/>
-
-    <text x="22" y="78" class="mono muted" font-size="12">PRIMARY</text>
-    <text x="118" y="78" class="mono bright" font-size="13">C# / .NET</text>
-    <text x="22" y="106" class="mono muted" font-size="12">UI</text>
-    <text x="118" y="106" class="mono bright" font-size="13">WPF / Windows</text>
-    <text x="22" y="134" class="mono muted" font-size="12">FOCUS</text>
-    <text x="118" y="134" class="mono bright" font-size="13">Performance + UX</text>
-    <text x="22" y="162" class="mono muted" font-size="12">MODE</text>
-    <text x="118" y="162" class="mono accent" font-size="13">BUILDING</text>
-
-    <path class="dash wave" d="M22 202 C45 192,56 210,75 200 S104 186,121 202 S148 216,166 199 S197 187,214 202 S248 214,266 198 S290 190,304 201" fill="none" stroke="#76B900" stroke-width="2" opacity="0.85"/>
-    <circle cx="22" cy="202" r="2" fill="#76B900" class="node"/>
-    <circle cx="121" cy="202" r="2" fill="#76B900" class="node" style="animation-delay:.5s"/>
-    <circle cx="214" cy="202" r="2" fill="#76B900" class="node" style="animation-delay:1s"/>
-    <circle cx="304" cy="201" r="2" fill="#76B900" class="node" style="animation-delay:1.5s"/>
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="1.3s" dur="0.5s" fill="freeze"/>
+    <rect x="760" y="108" width="360" height="170" rx="16" fill="url(#panel)" class="panel-stroke"/>
+    <text x="782" y="136" class="mono dim label">DEV TELEMETRY</text>
+    <text x="1088" y="136" class="mono green label" text-anchor="end">LIVE</text>
+    <line x1="782" y1="150" x2="1098" y2="150" stroke="rgba(255,255,255,0.08)"/>
+    <text x="782" y="188" class="mono dim label">PRIMARY</text>
+    <text x="884" y="188" class="mono fg value">C# / .NET</text>
+    <text x="782" y="223" class="mono dim label">UI</text>
+    <text x="884" y="223" class="mono fg value">WPF / Windows</text>
+    <text x="782" y="258" class="mono dim label">FOCUS</text>
+    <text x="884" y="258" class="mono fg value">Performance + UX</text>
   </g>
 
-  <text x="72" y="438" class="mono muted" font-size="11">PROFILE INTERFACE // CUSTOM SVG</text>
-  <text x="982" y="438" class="mono muted" font-size="11">GITHUB.COM/STRECKERMX</text>
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="2.9s" dur="0.5s" fill="freeze"/>
+    <rect x="760" y="308" width="360" height="190" rx="16" fill="url(#panel)" class="panel-stroke"/>
+    <text x="782" y="336" class="mono dim label">WORKFLOW</text>
+    <text x="1088" y="336" class="mono green label" text-anchor="end">CURRENT</text>
+    <line x1="782" y1="350" x2="1098" y2="350" stroke="rgba(255,255,255,0.08)"/>
+    <circle cx="788" cy="387" r="4" fill="#76B900"/>
+    <text x="805" y="392" class="sans fg body">Build practical tools, not noisy demos</text>
+    <circle cx="788" cy="427" r="4" fill="#76B900"/>
+    <text x="805" y="432" class="sans fg body">Turn raw data into something readable</text>
+    <circle cx="788" cy="467" r="4" fill="#76B900"/>
+    <text x="805" y="472" class="sans fg body">Keep interfaces fast, clean, and useful</text>
+  </g>
+
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="4.4s" dur="0.5s" fill="freeze"/>
+    <rect x="760" y="528" width="360" height="214" rx="16" fill="url(#panel)" class="panel-stroke"/>
+    <text x="782" y="556" class="mono dim label">FEATURED WORK</text>
+    <text x="1088" y="556" class="mono green label" text-anchor="end">PUBLIC</text>
+    <line x1="782" y1="570" x2="1098" y2="570" stroke="rgba(255,255,255,0.08)"/>
+    <text x="782" y="610" class="sans fg section">FrameView Analyzer</text>
+    <text x="782" y="642" class="sans muted body">Native Windows application for analyzing NVIDIA</text>
+    <text x="782" y="668" class="sans muted body">FrameView captures and NVIDIA App performance logs.</text>
+    <rect x="782" y="694" width="106" height="28" rx="14" fill="rgba(118,185,0,0.14)" stroke="rgba(118,185,0,0.35)"/>
+    <text x="835" y="713" class="mono green small" text-anchor="middle">SOURCE</text>
+    <rect x="900" y="694" width="126" height="28" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="963" y="713" class="mono fg small" text-anchor="middle">RELEASES</text>
+  </g>
+
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="5.5s" dur="0.5s" fill="freeze"/>
+    <line x1="36" y1="792" x2="1164" y2="792" stroke="rgba(255,255,255,0.07)"/>
+    <text x="54" y="817" class="mono dim micro">PROFILE INTERFACE / CUSTOM SVG / SINGLE-LOAD INTRO</text>
+    <text x="1144" y="817" class="mono dim micro" text-anchor="end">GITHUB.COM/STRECKERMX</text>
+  </g>
 </svg>

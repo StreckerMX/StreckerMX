@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+# Regenerates the public profile SVG from live FrameView Analyzer repository data.
 import html
 import json
 import os

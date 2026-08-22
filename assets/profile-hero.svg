@@ -1,36 +1,64 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="7200" viewBox="0 0 1440 7200" role="img" aria-labelledby="title desc">
   <title id="title">Strecker developer profile</title>
-  <desc id="desc">A long black developer profile with macOS-inspired liquid-glass terminals, live GitHub telemetry, one-time reveals, and a subtle green scan.</desc>
+  <desc id="desc">A long pure-black developer profile with Windows Terminal-inspired translucent panels, live GitHub telemetry, one-time reveals, and a noisy green scan.</desc>
 
   <defs>
-    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#192027" stop-opacity="0.68"/>
-      <stop offset="0.42" stop-color="#10161C" stop-opacity="0.58"/>
-      <stop offset="1" stop-color="#090D11" stop-opacity="0.48"/>
+    <linearGradient id="terminalBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#080A0C" stop-opacity="0.80"/>
+      <stop offset="0.55" stop-color="#020303" stop-opacity="0.73"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.67"/>
+    </linearGradient>
+    <linearGradient id="terminalTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#343434" stop-opacity="0.94"/>
+      <stop offset="1" stop-color="#292929" stop-opacity="0.90"/>
+    </linearGradient>
+    <linearGradient id="tabActive" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#111315" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#070809" stop-opacity="0.88"/>
     </linearGradient>
     <linearGradient id="glassHighlight" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.12"/>
-      <stop offset="0.28" stop-color="#FFFFFF" stop-opacity="0.025"/>
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.055"/>
+      <stop offset="0.24" stop-color="#FFFFFF" stop-opacity="0.012"/>
       <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#76B900" stop-opacity="0"/>
-      <stop offset="0.38" stop-color="#76B900" stop-opacity="0.015"/>
-      <stop offset="0.5" stop-color="#76B900" stop-opacity="0.13"/>
-      <stop offset="0.62" stop-color="#76B900" stop-opacity="0.015"/>
-      <stop offset="1" stop-color="#76B900" stop-opacity="0"/>
+    <linearGradient id="scanGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00FF3B" stop-opacity="0"/>
+      <stop offset="0.28" stop-color="#00FF3B" stop-opacity="0.035"/>
+      <stop offset="0.5" stop-color="#00FF3B" stop-opacity="0.28"/>
+      <stop offset="0.72" stop-color="#00FF3B" stop-opacity="0.035"/>
+      <stop offset="1" stop-color="#00FF3B" stop-opacity="0"/>
     </linearGradient>
     <radialGradient id="ambient" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#76B900" stop-opacity="0.055"/>
+      <stop offset="0" stop-color="#76B900" stop-opacity="0.028"/>
       <stop offset="1" stop-color="#76B900" stop-opacity="0"/>
     </radialGradient>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
-      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#000000" flood-opacity="0.72"/>
+      <feDropShadow dx="0" dy="22" stdDeviation="30" flood-color="#000000" flood-opacity="0.88"/>
     </filter>
     <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
       <feGaussianBlur stdDeviation="7" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <linearGradient id="scanMaskGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000000"/>
+      <stop offset="0.22" stop-color="#777777"/>
+      <stop offset="0.46" stop-color="#FFFFFF"/>
+      <stop offset="0.54" stop-color="#FFFFFF"/>
+      <stop offset="0.78" stop-color="#777777"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <mask id="scanBandMask"><rect x="0" y="0" width="1440" height="240" fill="url(#scanMaskGradient)"/></mask>
+    <pattern id="scanDust" width="120" height="64" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="11" r="1.8" fill="#00FF3B" opacity=".72"/><circle cx="14" cy="39" r="1.2" fill="#00FF3B" opacity=".88"/>
+      <circle cx="22" cy="21" r="2.1" fill="#00FF3B" opacity=".56"/><circle cx="31" cy="55" r="1.5" fill="#00FF3B" opacity=".78"/>
+      <circle cx="39" cy="8" r="1.0" fill="#00FF3B" opacity=".95"/><circle cx="47" cy="34" r="2.4" fill="#00FF3B" opacity=".48"/>
+      <circle cx="56" cy="18" r="1.4" fill="#00FF3B" opacity=".82"/><circle cx="63" cy="49" r="1.9" fill="#00FF3B" opacity=".64"/>
+      <circle cx="71" cy="28" r="1.1" fill="#00FF3B" opacity=".96"/><circle cx="79" cy="60" r="2.0" fill="#00FF3B" opacity=".52"/>
+      <circle cx="86" cy="13" r="1.6" fill="#00FF3B" opacity=".76"/><circle cx="94" cy="43" r="1.3" fill="#00FF3B" opacity=".91"/>
+      <circle cx="103" cy="24" r="2.2" fill="#00FF3B" opacity=".58"/><circle cx="113" cy="53" r="1.2" fill="#00FF3B" opacity=".86"/>
+      <rect x="18" y="46" width="4.5" height="1.2" rx=".6" fill="#00FF3B" opacity=".72"/><rect x="67" y="6" width="5" height="1.1" rx=".55" fill="#00FF3B" opacity=".60"/>
+      <rect x="98" y="35" width="6" height="1.2" rx=".6" fill="#00FF3B" opacity=".66"/>
+    </pattern>
     <style>
       .sans { font-family: Inter, "Segoe UI", Arial, sans-serif; }
       .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
@@ -39,8 +67,13 @@
       .dim { fill:#68737E; }
       .green { fill:#76B900; }
       .rule { stroke:#FFFFFF; stroke-opacity:.075; stroke-width:1.5; }
-      .glass { fill:url(#glass); stroke:#FFFFFF; stroke-opacity:.115; stroke-width:1.4; filter:url(#shadow); }
+      .glass { fill:url(#terminalBody); stroke:#6A6A6A; stroke-opacity:.62; stroke-width:1.35; filter:url(#shadow); }
       .glassSheen { fill:url(#glassHighlight); pointer-events:none; }
+      .terminalTop { fill:url(#terminalTop); stroke:#FFFFFF; stroke-opacity:.035; stroke-width:1; }
+      .tabActive { fill:url(#tabActive); stroke:#FFFFFF; stroke-opacity:.045; stroke-width:1; }
+      .winControl { fill:#D6D6D6; fill-opacity:.90; }
+      .tabText { font-size:19px; font-weight:600; fill:#F1F1F1; }
+      .psVersion { font-size:20px; font-weight:650; fill:#00FF3B; }
       .top { font-size:22px; }
       .hero { font-size:92px; font-weight:720; letter-spacing:-.025em; }
       .heroSub { font-size:27px; letter-spacing:.10em; }
@@ -48,7 +81,7 @@
       .sectionNo { font-size:18px; letter-spacing:.20em; }
       .sectionTitle { font-size:48px; font-weight:660; }
       .sectionIntro { font-size:28px; }
-      .windowTitle { font-size:18px; letter-spacing:.06em; }
+      .windowTitle { font-size:18px; letter-spacing:.03em; }
       .eyebrow { font-size:20px; letter-spacing:.16em; }
       .cardHeading { font-size:33px; font-weight:620; }
       .body { font-size:27px; }
@@ -67,23 +100,30 @@
     <clipPath id="type4"><rect x="144" y="728" width="0" height="45"><animate attributeName="width" from="0" to="920" begin="3.5s" dur="1.35s" fill="freeze"/></rect></clipPath>
   </defs>
 
+  <!-- pure black canvas -->
   <rect width="1440" height="7200" rx="34" fill="#000000"/>
   <rect x="2" y="2" width="1436" height="7196" rx="32" fill="none" stroke="#76B900" stroke-opacity=".11" stroke-width="2"/>
   <rect x="28" y="28" width="1384" height="7144" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity=".04"/>
 
+  <!-- noisy green scan lives BEHIND the translucent Windows Terminal panels -->
   <ellipse cx="1120" cy="390" rx="520" ry="360" fill="url(#ambient)"/>
-  <ellipse cx="240" cy="3560" rx="500" ry="680" fill="url(#ambient)" opacity=".45"/>
-  <rect x="0" y="-560" width="1440" height="560" fill="url(#scan)">
-    <animate attributeName="y" from="-560" to="7760" dur="30s" repeatCount="indefinite"/>
-  </rect>
+  <ellipse cx="240" cy="3560" rx="500" ry="680" fill="url(#ambient)" opacity=".28"/>
+  <g>
+    <rect x="0" y="-210" width="1440" height="420" fill="url(#scanGlow)" opacity=".72"/>
+    <rect x="0" y="-120" width="1440" height="240" fill="url(#scanDust)" mask="url(#scanBandMask)" opacity=".96"/>
+    <rect x="0" y="-16" width="1440" height="32" fill="#00FF3B" opacity=".045" filter="url(#glow)"/>
+    <animateTransform attributeName="transform" type="translate" from="0 -260" to="0 7460" dur="30s" repeatCount="indefinite"/>
+  </g>
 
+  <!-- chrome -->
   <circle cx="72" cy="68" r="7" fill="#374151"/><circle cx="100" cy="68" r="7" fill="#2E3A46"/><circle cx="128" cy="68" r="7" fill="#23303B"/>
   <text x="174" y="76" class="mono muted top">strecker@github: ~/profile</text>
   <circle cx="1190" cy="68" r="7" fill="#76B900" filter="url(#glow)"/>
   <text x="1212" y="76" class="mono green top">ONLINE</text>
-  <text x="1360" y="76" class="mono dim top" text-anchor="end">v7.0</text>
+  <text x="1360" y="76" class="mono dim top" text-anchor="end">v8.0</text>
   <line x1="66" y1="110" x2="1374" y2="110" class="rule"/>
 
+  <!-- HERO -->
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0s" dur=".45s" fill="freeze"/>
     <text x="112" y="262" class="sans fg hero">Strecker</text>
     <rect x="114" y="292" width="190" height="10" rx="5" fill="#76B900"/>
@@ -96,15 +136,28 @@
   <text x="144" y="758" class="mono muted codeText" clip-path="url(#type4)">building · measuring · refining · shipping</text>
   <line x1="112" y1="878" x2="1328" y2="878" class="rule"/>
 
+  <!-- 01 IDENTITY -->
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="4.8s" dur=".55s" fill="freeze"/>
     <text x="112" y="982" class="mono green sectionNo">01 / IDENTITY</text>
     <text x="112" y="1050" class="sans fg sectionTitle">What I build</text>
     <text x="112" y="1110" class="sans muted sectionIntro">Desktop software and workflows where performance, clarity, and repeatability matter.</text>
+
+    <!-- Windows Terminal-style translucent panel -->
     <rect x="112" y="1200" width="1216" height="560" rx="28" class="glass"/>
     <rect x="112" y="1200" width="1216" height="560" rx="28" class="glassSheen"/>
-    <circle cx="152" cy="1242" r="9" fill="#FF5F57"/><circle cx="182" cy="1242" r="9" fill="#FEBC2E"/><circle cx="212" cy="1242" r="9" fill="#28C840"/>
-    <text x="258" y="1250" class="mono dim windowTitle">identity — zsh</text>
-    <line x1="140" y1="1280" x2="1300" y2="1280" class="rule"/>
+    <rect x="112" y="1200" width="1216" height="66" rx="28" class="terminalTop"/>
+    <rect x="130" y="1210" width="360" height="56" rx="11" class="tabActive"/>
+    <rect x="150" y="1226" width="22" height="22" rx="4" fill="#5B2B82"/>
+    <text x="161" y="1243" class="mono fg" font-size="12" text-anchor="middle">&gt;_</text>
+    <text x="188" y="1245" class="sans tabText">identity</text>
+    <text x="466" y="1245" class="sans muted" font-size="25" text-anchor="middle">×</text>
+    <text x="510" y="1246" class="sans fg" font-size="30" text-anchor="middle">+</text>
+    <path d="M 542 1231 l 8 8 l 8 -8" fill="none" stroke="#D2D2D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="1178" y1="1233" x2="1198" y2="1233" stroke="#D6D6D6" stroke-width="2"/>
+    <rect x="1228" y="1224" width="16" height="16" fill="none" stroke="#D6D6D6" stroke-width="1.8"/>
+    <path d="M 1286 1225 l 18 18 M 1304 1225 l -18 18" stroke="#D6D6D6" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="112" y1="1266" x2="1328" y2="1266" stroke="#FFFFFF" stroke-opacity=".08"/>
+    <text x="142" y="1312" class="mono psVersion">PowerShell 7.6.5</text>
     <text x="150" y="1360" class="mono green codePrompt">$ build --target windows</text>
     <text x="182" y="1418" class="mono muted codeText">native desktop tools · responsive interfaces · careful UX</text>
     <text x="150" y="1500" class="mono green codePrompt">$ priorities</text>
@@ -115,36 +168,64 @@
 
   <line x1="112" y1="1878" x2="1328" y2="1878" class="rule"/>
 
+  <!-- 02 FOCUS -->
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="6.0s" dur=".55s" fill="freeze"/>
     <text x="112" y="1982" class="mono green sectionNo">02 / FOCUS</text>
     <text x="112" y="2050" class="sans fg sectionTitle">Where I spend my time</text>
     <text x="112" y="2110" class="sans muted sectionIntro">The same themes keep showing up across the tools I build.</text>
+
     <rect x="112" y="2200" width="1216" height="760" rx="28" class="glass"/>
     <rect x="112" y="2200" width="1216" height="760" rx="28" class="glassSheen"/>
-    <circle cx="152" cy="2242" r="9" fill="#FF5F57"/><circle cx="182" cy="2242" r="9" fill="#FEBC2E"/><circle cx="212" cy="2242" r="9" fill="#28C840"/>
-    <text x="258" y="2250" class="mono dim windowTitle">focus.list — terminal</text>
-    <line x1="140" y1="2280" x2="1300" y2="2280" class="rule"/>
+    <rect x="112" y="2200" width="1216" height="66" rx="28" class="terminalTop"/>
+    <rect x="130" y="2210" width="360" height="56" rx="11" class="tabActive"/>
+    <rect x="150" y="2226" width="22" height="22" rx="4" fill="#5B2B82"/>
+    <text x="161" y="2243" class="mono fg" font-size="12" text-anchor="middle">&gt;_</text>
+    <text x="188" y="2245" class="sans tabText">focus.list</text>
+    <text x="466" y="2245" class="sans muted" font-size="25" text-anchor="middle">×</text>
+    <text x="510" y="2246" class="sans fg" font-size="30" text-anchor="middle">+</text>
+    <path d="M 542 2231 l 8 8 l 8 -8" fill="none" stroke="#D2D2D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="1178" y1="2233" x2="1198" y2="2233" stroke="#D6D6D6" stroke-width="2"/>
+    <rect x="1228" y="2224" width="16" height="16" fill="none" stroke="#D6D6D6" stroke-width="1.8"/>
+    <path d="M 1286 2225 l 18 18 M 1304 2225 l -18 18" stroke="#D6D6D6" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="112" y1="2266" x2="1328" y2="2266" stroke="#FFFFFF" stroke-opacity=".08"/>
+    <text x="142" y="2312" class="mono psVersion">PowerShell 7.6.5</text>
+
     <text x="150" y="2370" class="mono green eyebrow">PERFORMANCE + DATA</text>
     <text x="150" y="2430" class="sans fg cardHeading">Benchmarking, telemetry, filtering, visualization</text>
     <text x="150" y="2484" class="sans muted body">Turn noisy technical data into something you can inspect, compare, and trust.</text>
+
     <text x="150" y="2610" class="mono green eyebrow">AUTOMATION</text>
     <text x="150" y="2670" class="sans fg cardHeading">Repeatable workflows instead of repeated effort</text>
     <text x="150" y="2724" class="sans muted body">Scripts, CI, and practical AI tooling that remove friction from development.</text>
+
     <text x="150" y="2850" class="mono green eyebrow">INTERFACE DESIGN</text>
     <text x="150" y="2910" class="sans fg cardHeading">Technical software should still feel polished</text>
   </g>
 
   <line x1="112" y1="3078" x2="1328" y2="3078" class="rule"/>
 
+  <!-- 03 TOOLBOX -->
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="7.4s" dur=".55s" fill="freeze"/>
     <text x="112" y="3182" class="mono green sectionNo">03 / TOOLBOX</text>
     <text x="112" y="3250" class="sans fg sectionTitle">Tools I reach for</text>
     <text x="112" y="3310" class="sans muted sectionIntro">A compact stack for desktop work, automation, testing, and delivery.</text>
+
     <rect x="112" y="3400" width="1216" height="720" rx="28" class="glass"/>
     <rect x="112" y="3400" width="1216" height="720" rx="28" class="glassSheen"/>
-    <circle cx="152" cy="3442" r="9" fill="#FF5F57"/><circle cx="182" cy="3442" r="9" fill="#FEBC2E"/><circle cx="212" cy="3442" r="9" fill="#28C840"/>
-    <text x="258" y="3450" class="mono dim windowTitle">toolbox — system_profiler</text>
-    <line x1="140" y1="3480" x2="1300" y2="3480" class="rule"/>
+    <rect x="112" y="3400" width="1216" height="66" rx="28" class="terminalTop"/>
+    <rect x="130" y="3410" width="360" height="56" rx="11" class="tabActive"/>
+    <rect x="150" y="3426" width="22" height="22" rx="4" fill="#5B2B82"/>
+    <text x="161" y="3443" class="mono fg" font-size="12" text-anchor="middle">&gt;_</text>
+    <text x="188" y="3445" class="sans tabText">toolbox</text>
+    <text x="466" y="3445" class="sans muted" font-size="25" text-anchor="middle">×</text>
+    <text x="510" y="3446" class="sans fg" font-size="30" text-anchor="middle">+</text>
+    <path d="M 542 3431 l 8 8 l 8 -8" fill="none" stroke="#D2D2D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="1178" y1="3433" x2="1198" y2="3433" stroke="#D6D6D6" stroke-width="2"/>
+    <rect x="1228" y="3424" width="16" height="16" fill="none" stroke="#D6D6D6" stroke-width="1.8"/>
+    <path d="M 1286 3425 l 18 18 M 1304 3425 l -18 18" stroke="#D6D6D6" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="112" y1="3466" x2="1328" y2="3466" stroke="#FFFFFF" stroke-opacity=".08"/>
+    <text x="142" y="3512" class="mono psVersion">PowerShell 7.6.5</text>
+
     <text x="150" y="3570" class="mono dim metricLabel">LANGUAGE</text><text x="420" y="3570" class="mono fg metricValue">C#</text>
     <text x="150" y="3650" class="mono dim metricLabel">RUNTIME</text><text x="420" y="3650" class="mono fg metricValue">.NET 10</text>
     <text x="150" y="3730" class="mono dim metricLabel">DESKTOP UI</text><text x="420" y="3730" class="mono fg metricValue">WPF</text>
@@ -155,15 +236,27 @@
 
   <line x1="112" y1="4248" x2="1328" y2="4248" class="rule"/>
 
+  <!-- 04 WORKFLOW -->
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="8.8s" dur=".55s" fill="freeze"/>
     <text x="112" y="4352" class="mono green sectionNo">04 / WORKFLOW</text>
     <text x="112" y="4420" class="sans fg sectionTitle">How I like to work</text>
     <text x="112" y="4480" class="sans muted sectionIntro">Small feedback loops, measurable results, and less ceremony.</text>
+
     <rect x="112" y="4570" width="1216" height="620" rx="28" class="glass"/>
     <rect x="112" y="4570" width="1216" height="620" rx="28" class="glassSheen"/>
-    <circle cx="152" cy="4612" r="9" fill="#FF5F57"/><circle cx="182" cy="4612" r="9" fill="#FEBC2E"/><circle cx="212" cy="4612" r="9" fill="#28C840"/>
-    <text x="258" y="4620" class="mono dim windowTitle">workflow — run.sh</text>
-    <line x1="140" y1="4650" x2="1300" y2="4650" class="rule"/>
+    <rect x="112" y="4570" width="1216" height="66" rx="28" class="terminalTop"/>
+    <rect x="130" y="4580" width="360" height="56" rx="11" class="tabActive"/>
+    <rect x="150" y="4596" width="22" height="22" rx="4" fill="#5B2B82"/>
+    <text x="161" y="4613" class="mono fg" font-size="12" text-anchor="middle">&gt;_</text>
+    <text x="188" y="4615" class="sans tabText">workflow</text>
+    <text x="466" y="4615" class="sans muted" font-size="25" text-anchor="middle">×</text>
+    <text x="510" y="4616" class="sans fg" font-size="30" text-anchor="middle">+</text>
+    <path d="M 542 4601 l 8 8 l 8 -8" fill="none" stroke="#D2D2D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="1178" y1="4603" x2="1198" y2="4603" stroke="#D6D6D6" stroke-width="2"/>
+    <rect x="1228" y="4594" width="16" height="16" fill="none" stroke="#D6D6D6" stroke-width="1.8"/>
+    <path d="M 1286 4595 l 18 18 M 1304 4595 l -18 18" stroke="#D6D6D6" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="112" y1="4636" x2="1328" y2="4636" stroke="#FFFFFF" stroke-opacity=".08"/>
+    <text x="142" y="4682" class="mono psVersion">PowerShell 7.6.5</text>
     <text x="150" y="4740" class="mono green codePrompt">01 inspect</text><text x="380" y="4740" class="mono muted codeText">understand the actual problem</text>
     <text x="150" y="4830" class="mono green codePrompt">02 build</text><text x="380" y="4830" class="mono muted codeText">prefer the simplest clear solution</text>
     <text x="150" y="4920" class="mono green codePrompt">03 measure</text><text x="380" y="4920" class="mono muted codeText">test performance, behavior, and UX</text>
@@ -172,16 +265,29 @@
 
   <line x1="112" y1="5318" x2="1328" y2="5318" class="rule"/>
 
+  <!-- 05 LIVE TELEMETRY / FEATURED WORK -->
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="10.2s" dur=".55s" fill="freeze"/>
     <text x="112" y="5422" class="mono green sectionNo">05 / LIVE PROJECT TELEMETRY</text>
     <text x="112" y="5490" class="sans fg sectionTitle">FrameView Analyzer</text>
     <text x="112" y="5550" class="sans muted sectionIntro">Real repository data, refreshed automatically by GitHub Actions.</text>
+
     <rect x="112" y="5640" width="1216" height="1080" rx="28" class="glass"/>
     <rect x="112" y="5640" width="1216" height="1080" rx="28" class="glassSheen"/>
-    <circle cx="152" cy="5682" r="9" fill="#FF5F57"/><circle cx="182" cy="5682" r="9" fill="#FEBC2E"/><circle cx="212" cy="5682" r="9" fill="#28C840"/>
-    <text x="258" y="5690" class="mono dim windowTitle">frameview-analyzer — live</text>
-    <text x="1290" y="5690" class="mono green windowTitle" text-anchor="end">SYNC 2026-08-22 UTC</text>
-    <line x1="140" y1="5720" x2="1300" y2="5720" class="rule"/>
+    <rect x="112" y="5640" width="1216" height="66" rx="28" class="terminalTop"/>
+    <rect x="130" y="5650" width="430" height="56" rx="11" class="tabActive"/>
+    <rect x="150" y="5666" width="22" height="22" rx="4" fill="#5B2B82"/>
+    <text x="161" y="5683" class="mono fg" font-size="12" text-anchor="middle">&gt;_</text>
+    <text x="188" y="5685" class="sans tabText">FrameView Analyzer</text>
+    <text x="536" y="5685" class="sans muted" font-size="25" text-anchor="middle">×</text>
+    <text x="580" y="5686" class="sans fg" font-size="30" text-anchor="middle">+</text>
+    <path d="M 612 5671 l 8 8 l 8 -8" fill="none" stroke="#D2D2D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="1178" y1="5673" x2="1198" y2="5673" stroke="#D6D6D6" stroke-width="2"/>
+    <rect x="1228" y="5664" width="16" height="16" fill="none" stroke="#D6D6D6" stroke-width="1.8"/>
+    <path d="M 1286 5665 l 18 18 M 1304 5665 l -18 18" stroke="#D6D6D6" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="112" y1="5706" x2="1328" y2="5706" stroke="#FFFFFF" stroke-opacity=".08"/>
+    <text x="142" y="5752" class="mono psVersion">PowerShell 7.6.5</text>
+    <text x="1298" y="5752" class="mono green windowTitle" text-anchor="end">SYNC 2026-08-22 UTC</text>
+
     <text x="150" y="5820" class="mono dim metricLabel">LATEST RELEASE</text>
     <text x="150" y="5882" class="mono fg metricBig">v2.3.0</text>
     <text x="520" y="5820" class="mono dim metricLabel">STARS</text>
@@ -190,14 +296,17 @@
     <text x="780" y="5882" class="mono green metricBig">PASSING</text>
     <text x="1060" y="5820" class="mono dim metricLabel">OPEN PRS</text>
     <text x="1060" y="5882" class="mono fg metricBig">0</text>
+
     <line x1="150" y1="5960" x2="1290" y2="5960" class="rule"/>
     <text x="150" y="6045" class="mono dim metricLabel">PRIMARY LANGUAGE</text>
     <text x="440" y="6045" class="mono fg metricValue">C#</text>
     <text x="760" y="6045" class="mono dim metricLabel">RELEASE DATE</text>
     <text x="1010" y="6045" class="mono fg metricValue">2026-08-19</text>
+
     <text x="150" y="6170" class="mono green codePrompt">$ git log -1 --oneline</text>
     <text x="182" y="6230" class="mono fg codeText">ef584d9  Release FrameView Analyzer 2.3.0 (#27)</text>
     <text x="182" y="6282" class="mono dim codeText">committed 2026-08-19</text>
+
     <line x1="150" y1="6370" x2="1290" y2="6370" class="rule"/>
     <text x="150" y="6455" class="mono dim metricLabel">STATUS</text>
     <text x="410" y="6455" class="mono green metricValue">BUILDING · REFINING · RELEASING</text>
@@ -205,9 +314,10 @@
     <text x="150" y="6590" class="sans muted body">The numbers above are generated from the repository itself, not a third-party badge service.</text>
   </g>
 
+  <!-- footer -->
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="11.8s" dur=".55s" fill="freeze"/>
     <line x1="112" y1="6920" x2="1328" y2="6920" class="rule"/>
-    <text x="112" y="6990" class="mono dim footer">PROFILE INTERFACE / PURE BLACK / LIQUID GLASS / LIVE TELEMETRY</text>
+    <text x="112" y="6990" class="mono dim footer">PROFILE INTERFACE / PURE BLACK / WINDOWS TERMINAL / LIVE TELEMETRY</text>
     <text x="1328" y="6990" class="mono dim footer" text-anchor="end">GITHUB.COM/STRECKERMX</text>
     <circle cx="112" cy="7062" r="6" fill="#76B900" filter="url(#glow)"/>
     <text x="140" y="7070" class="mono green top">still building</text>

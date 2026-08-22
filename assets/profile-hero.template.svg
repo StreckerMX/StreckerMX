@@ -1,215 +1,184 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="7200" viewBox="0 0 1440 7200" role="img" aria-labelledby="title desc">
   <title id="title">Strecker developer profile</title>
-  <desc id="desc">A long black developer profile with macOS-inspired liquid-glass terminals, live GitHub telemetry, one-time reveals, and a subtle green scan.</desc>
+  <desc id="desc">A long pure-black developer profile built as transparent Windows Terminal sessions with live GitHub telemetry and a soft green scan.</desc>
 
   <defs>
-    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#192027" stop-opacity="0.68"/>
-      <stop offset="0.42" stop-color="#10161C" stop-opacity="0.58"/>
-      <stop offset="1" stop-color="#090D11" stop-opacity="0.48"/>
-    </linearGradient>
-    <linearGradient id="glassHighlight" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.12"/>
-      <stop offset="0.28" stop-color="#FFFFFF" stop-opacity="0.025"/>
-      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
-    </linearGradient>
     <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#76B900" stop-opacity="0"/>
-      <stop offset="0.38" stop-color="#76B900" stop-opacity="0.015"/>
-      <stop offset="0.5" stop-color="#76B900" stop-opacity="0.13"/>
-      <stop offset="0.62" stop-color="#76B900" stop-opacity="0.015"/>
+      <stop offset="0.30" stop-color="#76B900" stop-opacity="0.018"/>
+      <stop offset="0.50" stop-color="#76B900" stop-opacity="0.15"/>
+      <stop offset="0.70" stop-color="#76B900" stop-opacity="0.018"/>
       <stop offset="1" stop-color="#76B900" stop-opacity="0"/>
     </linearGradient>
-    <radialGradient id="ambient" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#76B900" stop-opacity="0.055"/>
-      <stop offset="1" stop-color="#76B900" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
-      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#000000" flood-opacity="0.72"/>
-    </filter>
     <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="7" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <style>
       .sans { font-family: Inter, "Segoe UI", Arial, sans-serif; }
-      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      .mono { font-family: ui-monospace, "Cascadia Mono", "Cascadia Code", Consolas, monospace; }
       .fg { fill:#F4F6F8; }
-      .muted { fill:#A1ACB7; }
-      .dim { fill:#68737E; }
+      .muted { fill:#A5AFB9; }
+      .dim { fill:#6D7883; }
       .green { fill:#76B900; }
-      .rule { stroke:#FFFFFF; stroke-opacity:.075; stroke-width:1.5; }
-      .glass { fill:url(#glass); stroke:#FFFFFF; stroke-opacity:.115; stroke-width:1.4; filter:url(#shadow); }
-      .glassSheen { fill:url(#glassHighlight); pointer-events:none; }
-      .top { font-size:22px; }
+      .cyan { fill:#00D4FF; }
+      .pink { fill:#FF6FAE; }
+      .rule { stroke:#FFFFFF; stroke-opacity:.075; stroke-width:1.4; }
+      .terminalOutline { fill:none; stroke:#404040; stroke-width:1.6; }
+      .terminalTop { fill:#2D2D2D; }
+      .tabActive { fill:#0B0B0B; }
+      .tabText { font-size:21px; font-weight:600; }
+      .topIcon { font-size:28px; }
+      .windowButton { font-size:23px; }
+      .ps { font-size:24px; font-weight:700; }
       .hero { font-size:92px; font-weight:720; letter-spacing:-.025em; }
       .heroSub { font-size:27px; letter-spacing:.10em; }
       .lead { font-size:32px; }
-      .sectionNo { font-size:18px; letter-spacing:.20em; }
-      .sectionTitle { font-size:48px; font-weight:660; }
-      .sectionIntro { font-size:28px; }
-      .windowTitle { font-size:18px; letter-spacing:.06em; }
-      .eyebrow { font-size:20px; letter-spacing:.16em; }
-      .cardHeading { font-size:33px; font-weight:620; }
+      .terminalTitle { font-size:20px; letter-spacing:.18em; }
+      .terminalHeading { font-size:44px; font-weight:660; }
+      .prompt { font-size:27px; font-weight:650; }
+      .code { font-size:24px; }
       .body { font-size:27px; }
       .bodySmall { font-size:24px; }
-      .codePrompt { font-size:28px; font-weight:650; }
-      .codeText { font-size:25px; }
       .metricLabel { font-size:19px; letter-spacing:.12em; }
       .metricValue { font-size:28px; font-weight:620; }
       .metricBig { font-size:36px; font-weight:680; }
       .footer { font-size:18px; letter-spacing:.13em; }
     </style>
 
-    <clipPath id="type1"><rect x="112" y="554" width="0" height="45"><animate attributeName="width" from="0" to="195" begin=".5s" dur=".65s" fill="freeze"/></rect></clipPath>
-    <clipPath id="type2"><rect x="144" y="606" width="0" height="45"><animate attributeName="width" from="0" to="865" begin="1.2s" dur="1.35s" fill="freeze"/></rect></clipPath>
-    <clipPath id="type3"><rect x="112" y="676" width="0" height="45"><animate attributeName="width" from="0" to="250" begin="2.7s" dur=".75s" fill="freeze"/></rect></clipPath>
-    <clipPath id="type4"><rect x="144" y="728" width="0" height="45"><animate attributeName="width" from="0" to="920" begin="3.5s" dur="1.35s" fill="freeze"/></rect></clipPath>
+    <g id="wtTop">
+      <rect x="0" y="0" width="1216" height="64" rx="14" class="terminalTop"/>
+      <rect x="0" y="0" width="246" height="64" rx="14" class="tabActive"/>
+      <rect x="0" y="48" width="246" height="16" class="tabActive"/>
+      <text x="34" y="40" class="sans fg tabText">strecker</text>
+      <text x="214" y="41" class="sans fg topIcon">×</text>
+      <line x1="246" y1="10" x2="246" y2="54" stroke="#444"/>
+      <text x="274" y="42" class="sans fg topIcon">＋</text>
+      <line x1="316" y1="10" x2="316" y2="54" stroke="#444"/>
+      <text x="338" y="39" class="sans fg topIcon">⌄</text>
+      <text x="1034" y="41" class="sans fg windowButton">−</text>
+      <text x="1100" y="39" class="sans fg windowButton">□</text>
+      <text x="1170" y="41" class="sans fg windowButton">×</text>
+    </g>
+
+    <clipPath id="type1"><rect x="112" y="548" width="0" height="45"><animate attributeName="width" from="0" to="195" begin=".5s" dur=".65s" fill="freeze"/></rect></clipPath>
+    <clipPath id="type2"><rect x="144" y="600" width="0" height="45"><animate attributeName="width" from="0" to="865" begin="1.2s" dur="1.35s" fill="freeze"/></rect></clipPath>
+    <clipPath id="type3"><rect x="112" y="670" width="0" height="45"><animate attributeName="width" from="0" to="250" begin="2.7s" dur=".75s" fill="freeze"/></rect></clipPath>
+    <clipPath id="type4"><rect x="144" y="722" width="0" height="45"><animate attributeName="width" from="0" to="920" begin="3.5s" dur="1.35s" fill="freeze"/></rect></clipPath>
   </defs>
 
   <rect width="1440" height="7200" rx="34" fill="#000000"/>
-  <rect x="2" y="2" width="1436" height="7196" rx="32" fill="none" stroke="#76B900" stroke-opacity=".11" stroke-width="2"/>
-  <rect x="28" y="28" width="1384" height="7144" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity=".04"/>
+  <rect x="2" y="2" width="1436" height="7196" rx="32" fill="none" stroke="#76B900" stroke-opacity=".10" stroke-width="2"/>
+  <rect x="28" y="28" width="1384" height="7144" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity=".035"/>
 
-  <ellipse cx="1120" cy="390" rx="520" ry="360" fill="url(#ambient)"/>
-  <ellipse cx="240" cy="3560" rx="500" ry="680" fill="url(#ambient)" opacity=".45"/>
-  <rect x="0" y="-560" width="1440" height="560" fill="url(#scan)">
-    <animate attributeName="y" from="-560" to="7760" dur="30s" repeatCount="indefinite"/>
+  <rect x="0" y="-620" width="1440" height="620" fill="url(#scan)">
+    <animate attributeName="y" from="-620" to="7820" dur="30s" repeatCount="indefinite"/>
   </rect>
 
-  <circle cx="72" cy="68" r="7" fill="#374151"/><circle cx="100" cy="68" r="7" fill="#2E3A46"/><circle cx="128" cy="68" r="7" fill="#23303B"/>
-  <text x="174" y="76" class="mono muted top">strecker@github: ~/profile</text>
-  <circle cx="1190" cy="68" r="7" fill="#76B900" filter="url(#glow)"/>
-  <text x="1212" y="76" class="mono green top">ONLINE</text>
-  <text x="1360" y="76" class="mono dim top" text-anchor="end">v7.0</text>
-  <line x1="66" y1="110" x2="1374" y2="110" class="rule"/>
-
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0s" dur=".45s" fill="freeze"/>
-    <text x="112" y="262" class="sans fg hero">Strecker</text>
-    <rect x="114" y="292" width="190" height="10" rx="5" fill="#76B900"/>
-    <text x="112" y="374" class="mono muted heroSub">WINDOWS SOFTWARE / PERFORMANCE / AUTOMATION / LOCAL AI</text>
-    <text x="112" y="452" class="sans muted lead">Practical software. Measurable performance. Clear interfaces.</text>
+    <text x="112" y="250" class="sans fg hero">Strecker</text>
+    <rect x="114" y="280" width="190" height="10" rx="5" fill="#76B900"/>
+    <text x="112" y="362" class="mono muted heroSub">WINDOWS SOFTWARE / PERFORMANCE / AUTOMATION / LOCAL AI</text>
+    <text x="112" y="440" class="sans muted lead">Practical software. Measurable performance. Clear interfaces.</text>
   </g>
-  <text x="112" y="584" class="mono green codePrompt" clip-path="url(#type1)">$ whoami</text>
-  <text x="144" y="636" class="mono muted codeText" clip-path="url(#type2)">developer building fast, practical desktop tools and technical workflows</text>
-  <text x="112" y="706" class="mono green codePrompt" clip-path="url(#type3)">$ status --current</text>
-  <text x="144" y="758" class="mono muted codeText" clip-path="url(#type4)">building · measuring · refining · shipping</text>
-  <line x1="112" y1="878" x2="1328" y2="878" class="rule"/>
+  <text x="112" y="578" class="mono green prompt" clip-path="url(#type1)">$ whoami</text>
+  <text x="144" y="630" class="mono muted code" clip-path="url(#type2)">developer building fast, practical desktop tools and technical workflows</text>
+  <text x="112" y="700" class="mono green prompt" clip-path="url(#type3)">$ status --current</text>
+  <text x="144" y="752" class="mono muted code" clip-path="url(#type4)">building · measuring · refining · shipping</text>
 
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="4.8s" dur=".55s" fill="freeze"/>
-    <text x="112" y="982" class="mono green sectionNo">01 / IDENTITY</text>
-    <text x="112" y="1050" class="sans fg sectionTitle">What I build</text>
-    <text x="112" y="1110" class="sans muted sectionIntro">Desktop software and workflows where performance, clarity, and repeatability matter.</text>
-    <rect x="112" y="1200" width="1216" height="560" rx="28" class="glass"/>
-    <rect x="112" y="1200" width="1216" height="560" rx="28" class="glassSheen"/>
-    <circle cx="152" cy="1242" r="9" fill="#FF5F57"/><circle cx="182" cy="1242" r="9" fill="#FEBC2E"/><circle cx="212" cy="1242" r="9" fill="#28C840"/>
-    <text x="258" y="1250" class="mono dim windowTitle">identity — zsh</text>
-    <line x1="140" y1="1280" x2="1300" y2="1280" class="rule"/>
-    <text x="150" y="1360" class="mono green codePrompt">$ build --target windows</text>
-    <text x="182" y="1418" class="mono muted codeText">native desktop tools · responsive interfaces · careful UX</text>
-    <text x="150" y="1500" class="mono green codePrompt">$ priorities</text>
-    <text x="182" y="1558" class="mono muted codeText">predictable behavior · readable complexity · measurable results</text>
-    <text x="150" y="1662" class="mono dim metricLabel">PRIMARY</text><text x="380" y="1662" class="mono fg metricValue">C# / .NET</text>
-    <text x="780" y="1662" class="mono dim metricLabel">UI</text><text x="930" y="1662" class="mono fg metricValue">WPF / Windows</text>
+    <rect x="112" y="900" width="1216" height="850" rx="14" class="terminalOutline"/>
+    <g transform="translate(112 900)"><use href="#wtTop"/></g>
+    <text x="142" y="1018" class="mono green ps">PowerShell 7.6.5</text>
+    <text x="142" y="1084" class="mono dim terminalTitle">01 / IDENTITY</text>
+    <text x="142" y="1152" class="sans fg terminalHeading">What I build</text>
+    <text x="142" y="1210" class="sans muted body">Desktop software and workflows where performance, clarity, and repeatability matter.</text>
+    <text x="142" y="1315" class="mono green prompt">❯ whoami</text>
+    <text x="174" y="1370" class="mono muted code">developer building fast, practical desktop tools</text>
+    <text x="142" y="1470" class="mono green prompt">❯ priorities</text>
+    <text x="174" y="1525" class="mono muted code">predictable behavior · readable complexity · measurable results</text>
+    <line x1="142" y1="1600" x2="1298" y2="1600" class="rule"/>
+    <text x="142" y="1670" class="mono dim metricLabel">PRIMARY</text><text x="370" y="1670" class="mono fg metricValue">C# / .NET</text>
+    <text x="760" y="1670" class="mono dim metricLabel">UI</text><text x="930" y="1670" class="mono fg metricValue">WPF / Windows</text>
   </g>
-
-  <line x1="112" y1="1878" x2="1328" y2="1878" class="rule"/>
 
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="6.0s" dur=".55s" fill="freeze"/>
-    <text x="112" y="1982" class="mono green sectionNo">02 / FOCUS</text>
-    <text x="112" y="2050" class="sans fg sectionTitle">Where I spend my time</text>
-    <text x="112" y="2110" class="sans muted sectionIntro">The same themes keep showing up across the tools I build.</text>
-    <rect x="112" y="2200" width="1216" height="760" rx="28" class="glass"/>
-    <rect x="112" y="2200" width="1216" height="760" rx="28" class="glassSheen"/>
-    <circle cx="152" cy="2242" r="9" fill="#FF5F57"/><circle cx="182" cy="2242" r="9" fill="#FEBC2E"/><circle cx="212" cy="2242" r="9" fill="#28C840"/>
-    <text x="258" y="2250" class="mono dim windowTitle">focus.list — terminal</text>
-    <line x1="140" y1="2280" x2="1300" y2="2280" class="rule"/>
-    <text x="150" y="2370" class="mono green eyebrow">PERFORMANCE + DATA</text>
-    <text x="150" y="2430" class="sans fg cardHeading">Benchmarking, telemetry, filtering, visualization</text>
-    <text x="150" y="2484" class="sans muted body">Turn noisy technical data into something you can inspect, compare, and trust.</text>
-    <text x="150" y="2610" class="mono green eyebrow">AUTOMATION</text>
-    <text x="150" y="2670" class="sans fg cardHeading">Repeatable workflows instead of repeated effort</text>
-    <text x="150" y="2724" class="sans muted body">Scripts, CI, and practical AI tooling that remove friction from development.</text>
-    <text x="150" y="2850" class="mono green eyebrow">INTERFACE DESIGN</text>
-    <text x="150" y="2910" class="sans fg cardHeading">Technical software should still feel polished</text>
+    <rect x="112" y="1880" width="1216" height="1100" rx="14" class="terminalOutline"/>
+    <g transform="translate(112 1880)"><use href="#wtTop"/></g>
+    <text x="142" y="1998" class="mono green ps">PowerShell 7.6.5</text>
+    <text x="142" y="2064" class="mono dim terminalTitle">02 / FOCUS</text>
+    <text x="142" y="2132" class="sans fg terminalHeading">Where I spend my time</text>
+    <text x="142" y="2190" class="sans muted body">The same themes keep showing up across the tools I build.</text>
+    <text x="142" y="2305" class="mono green prompt">❯ performance</text>
+    <text x="174" y="2360" class="sans fg body">Benchmarking, telemetry, filtering, visualization</text>
+    <text x="174" y="2410" class="sans muted bodySmall">Turn noisy technical data into something you can inspect, compare, and trust.</text>
+    <text x="142" y="2540" class="mono green prompt">❯ automation</text>
+    <text x="174" y="2595" class="sans fg body">Repeatable workflows instead of repeated effort</text>
+    <text x="174" y="2645" class="sans muted bodySmall">Scripts, CI, and practical AI tooling that remove friction from development.</text>
+    <text x="142" y="2775" class="mono green prompt">❯ interface-design</text>
+    <text x="174" y="2830" class="sans fg body">Technical software should still feel polished</text>
+    <text x="174" y="2880" class="sans muted bodySmall">Information hierarchy and visual feedback are part of engineering.</text>
   </g>
-
-  <line x1="112" y1="3078" x2="1328" y2="3078" class="rule"/>
 
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="7.4s" dur=".55s" fill="freeze"/>
-    <text x="112" y="3182" class="mono green sectionNo">03 / TOOLBOX</text>
-    <text x="112" y="3250" class="sans fg sectionTitle">Tools I reach for</text>
-    <text x="112" y="3310" class="sans muted sectionIntro">A compact stack for desktop work, automation, testing, and delivery.</text>
-    <rect x="112" y="3400" width="1216" height="720" rx="28" class="glass"/>
-    <rect x="112" y="3400" width="1216" height="720" rx="28" class="glassSheen"/>
-    <circle cx="152" cy="3442" r="9" fill="#FF5F57"/><circle cx="182" cy="3442" r="9" fill="#FEBC2E"/><circle cx="212" cy="3442" r="9" fill="#28C840"/>
-    <text x="258" y="3450" class="mono dim windowTitle">toolbox — system_profiler</text>
-    <line x1="140" y1="3480" x2="1300" y2="3480" class="rule"/>
-    <text x="150" y="3570" class="mono dim metricLabel">LANGUAGE</text><text x="420" y="3570" class="mono fg metricValue">C#</text>
-    <text x="150" y="3650" class="mono dim metricLabel">RUNTIME</text><text x="420" y="3650" class="mono fg metricValue">.NET 10</text>
-    <text x="150" y="3730" class="mono dim metricLabel">DESKTOP UI</text><text x="420" y="3730" class="mono fg metricValue">WPF</text>
-    <text x="150" y="3810" class="mono dim metricLabel">AUTOMATION</text><text x="420" y="3810" class="mono fg metricValue">Python · PowerShell</text>
-    <text x="150" y="3890" class="mono dim metricLabel">DELIVERY</text><text x="420" y="3890" class="mono fg metricValue">GitHub Actions · Releases</text>
-    <text x="150" y="3970" class="mono dim metricLabel">AI WORKFLOWS</text><text x="420" y="3970" class="mono green metricValue">Local models · API-assisted development</text>
+    <rect x="112" y="3110" width="1216" height="1020" rx="14" class="terminalOutline"/>
+    <g transform="translate(112 3110)"><use href="#wtTop"/></g>
+    <text x="142" y="3228" class="mono green ps">PowerShell 7.6.5</text>
+    <text x="142" y="3294" class="mono dim terminalTitle">03 / TOOLBOX</text>
+    <text x="142" y="3362" class="sans fg terminalHeading">Tools I reach for</text>
+    <text x="142" y="3420" class="sans muted body">A compact stack for desktop work, automation, testing, and delivery.</text>
+    <line x1="142" y1="3490" x2="1298" y2="3490" class="rule"/>
+    <text x="142" y="3580" class="mono dim metricLabel">LANGUAGE</text><text x="430" y="3580" class="mono fg metricValue">C#</text>
+    <text x="142" y="3660" class="mono dim metricLabel">RUNTIME</text><text x="430" y="3660" class="mono fg metricValue">.NET 10</text>
+    <text x="142" y="3740" class="mono dim metricLabel">DESKTOP UI</text><text x="430" y="3740" class="mono fg metricValue">WPF</text>
+    <text x="142" y="3820" class="mono dim metricLabel">AUTOMATION</text><text x="430" y="3820" class="mono fg metricValue">Python · PowerShell</text>
+    <text x="142" y="3900" class="mono dim metricLabel">DELIVERY</text><text x="430" y="3900" class="mono fg metricValue">GitHub Actions · Releases</text>
+    <text x="142" y="3980" class="mono dim metricLabel">AI WORKFLOWS</text><text x="430" y="3980" class="mono green metricValue">Local models · API-assisted development</text>
   </g>
-
-  <line x1="112" y1="4248" x2="1328" y2="4248" class="rule"/>
 
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="8.8s" dur=".55s" fill="freeze"/>
-    <text x="112" y="4352" class="mono green sectionNo">04 / WORKFLOW</text>
-    <text x="112" y="4420" class="sans fg sectionTitle">How I like to work</text>
-    <text x="112" y="4480" class="sans muted sectionIntro">Small feedback loops, measurable results, and less ceremony.</text>
-    <rect x="112" y="4570" width="1216" height="620" rx="28" class="glass"/>
-    <rect x="112" y="4570" width="1216" height="620" rx="28" class="glassSheen"/>
-    <circle cx="152" cy="4612" r="9" fill="#FF5F57"/><circle cx="182" cy="4612" r="9" fill="#FEBC2E"/><circle cx="212" cy="4612" r="9" fill="#28C840"/>
-    <text x="258" y="4620" class="mono dim windowTitle">workflow — run.sh</text>
-    <line x1="140" y1="4650" x2="1300" y2="4650" class="rule"/>
-    <text x="150" y="4740" class="mono green codePrompt">01 inspect</text><text x="380" y="4740" class="mono muted codeText">understand the actual problem</text>
-    <text x="150" y="4830" class="mono green codePrompt">02 build</text><text x="380" y="4830" class="mono muted codeText">prefer the simplest clear solution</text>
-    <text x="150" y="4920" class="mono green codePrompt">03 measure</text><text x="380" y="4920" class="mono muted codeText">test performance, behavior, and UX</text>
-    <text x="150" y="5010" class="mono green codePrompt">04 refine</text><text x="380" y="5010" class="mono muted codeText">remove friction and fragile edges</text>
+    <rect x="112" y="4260" width="1216" height="820" rx="14" class="terminalOutline"/>
+    <g transform="translate(112 4260)"><use href="#wtTop"/></g>
+    <text x="142" y="4378" class="mono green ps">PowerShell 7.6.5</text>
+    <text x="142" y="4444" class="mono dim terminalTitle">04 / WORKFLOW</text>
+    <text x="142" y="4512" class="sans fg terminalHeading">How I like to work</text>
+    <text x="142" y="4570" class="sans muted body">Small feedback loops, measurable results, and less ceremony.</text>
+    <text x="142" y="4680" class="mono green prompt">01 inspect</text><text x="410" y="4680" class="mono muted code">understand the actual problem</text>
+    <text x="142" y="4770" class="mono green prompt">02 build</text><text x="410" y="4770" class="mono muted code">prefer the simplest clear solution</text>
+    <text x="142" y="4860" class="mono green prompt">03 measure</text><text x="410" y="4860" class="mono muted code">test performance, behavior, and UX</text>
+    <text x="142" y="4950" class="mono green prompt">04 refine</text><text x="410" y="4950" class="mono muted code">remove friction and fragile edges</text>
   </g>
 
-  <line x1="112" y1="5318" x2="1328" y2="5318" class="rule"/>
-
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="10.2s" dur=".55s" fill="freeze"/>
-    <text x="112" y="5422" class="mono green sectionNo">05 / LIVE PROJECT TELEMETRY</text>
-    <text x="112" y="5490" class="sans fg sectionTitle">FrameView Analyzer</text>
-    <text x="112" y="5550" class="sans muted sectionIntro">Real repository data, refreshed automatically by GitHub Actions.</text>
-    <rect x="112" y="5640" width="1216" height="1080" rx="28" class="glass"/>
-    <rect x="112" y="5640" width="1216" height="1080" rx="28" class="glassSheen"/>
-    <circle cx="152" cy="5682" r="9" fill="#FF5F57"/><circle cx="182" cy="5682" r="9" fill="#FEBC2E"/><circle cx="212" cy="5682" r="9" fill="#28C840"/>
-    <text x="258" y="5690" class="mono dim windowTitle">frameview-analyzer — live</text>
-    <text x="1290" y="5690" class="mono green windowTitle" text-anchor="end">SYNC {{SYNC_DATE}}</text>
-    <line x1="140" y1="5720" x2="1300" y2="5720" class="rule"/>
-    <text x="150" y="5820" class="mono dim metricLabel">LATEST RELEASE</text>
-    <text x="150" y="5882" class="mono fg metricBig">{{LATEST_RELEASE}}</text>
-    <text x="520" y="5820" class="mono dim metricLabel">STARS</text>
-    <text x="520" y="5882" class="mono fg metricBig">{{STARS}}</text>
-    <text x="780" y="5820" class="mono dim metricLabel">CI</text>
-    <text x="780" y="5882" class="mono green metricBig">{{CI_STATUS}}</text>
-    <text x="1060" y="5820" class="mono dim metricLabel">OPEN PRS</text>
-    <text x="1060" y="5882" class="mono fg metricBig">{{OPEN_PRS}}</text>
-    <line x1="150" y1="5960" x2="1290" y2="5960" class="rule"/>
-    <text x="150" y="6045" class="mono dim metricLabel">PRIMARY LANGUAGE</text>
-    <text x="440" y="6045" class="mono fg metricValue">{{PRIMARY_LANGUAGE}}</text>
-    <text x="760" y="6045" class="mono dim metricLabel">RELEASE DATE</text>
-    <text x="1010" y="6045" class="mono fg metricValue">{{RELEASE_DATE}}</text>
-    <text x="150" y="6170" class="mono green codePrompt">$ git log -1 --oneline</text>
-    <text x="182" y="6230" class="mono fg codeText">{{LAST_COMMIT_SHA}}  {{LAST_COMMIT_MSG}}</text>
-    <text x="182" y="6282" class="mono dim codeText">committed {{LAST_COMMIT_DATE}}</text>
-    <line x1="150" y1="6370" x2="1290" y2="6370" class="rule"/>
-    <text x="150" y="6455" class="mono dim metricLabel">STATUS</text>
-    <text x="410" y="6455" class="mono green metricValue">BUILDING · REFINING · RELEASING</text>
-    <text x="150" y="6540" class="sans muted body">Native Windows benchmark analysis for NVIDIA FrameView captures and NVIDIA App logs.</text>
-    <text x="150" y="6590" class="sans muted body">The numbers above are generated from the repository itself, not a third-party badge service.</text>
+    <rect x="112" y="5210" width="1216" height="1430" rx="14" class="terminalOutline"/>
+    <g transform="translate(112 5210)"><use href="#wtTop"/></g>
+    <text x="142" y="5328" class="mono green ps">PowerShell 7.6.5</text>
+    <text x="142" y="5394" class="mono dim terminalTitle">05 / LIVE PROJECT TELEMETRY</text>
+    <text x="142" y="5462" class="sans fg terminalHeading">FrameView Analyzer</text>
+    <text x="142" y="5520" class="sans muted body">Real repository data, refreshed automatically by GitHub Actions.</text>
+    <text x="1298" y="5328" class="mono dim code" text-anchor="end">SYNC {{SYNC_DATE}}</text>
+    <line x1="142" y1="5590" x2="1298" y2="5590" class="rule"/>
+    <text x="142" y="5690" class="mono dim metricLabel">LATEST RELEASE</text><text x="142" y="5750" class="mono fg metricBig">{{LATEST_RELEASE}}</text>
+    <text x="510" y="5690" class="mono dim metricLabel">STARS</text><text x="510" y="5750" class="mono fg metricBig">{{STARS}}</text>
+    <text x="760" y="5690" class="mono dim metricLabel">CI</text><text x="760" y="5750" class="mono green metricBig">{{CI_STATUS}}</text>
+    <text x="1060" y="5690" class="mono dim metricLabel">OPEN PRS</text><text x="1060" y="5750" class="mono fg metricBig">{{OPEN_PRS}}</text>
+    <line x1="142" y1="5830" x2="1298" y2="5830" class="rule"/>
+    <text x="142" y="5920" class="mono dim metricLabel">PRIMARY LANGUAGE</text><text x="450" y="5920" class="mono fg metricValue">{{PRIMARY_LANGUAGE}}</text>
+    <text x="770" y="5920" class="mono dim metricLabel">RELEASE DATE</text><text x="1040" y="5920" class="mono fg metricValue">{{RELEASE_DATE}}</text>
+    <text x="142" y="6060" class="mono green prompt">❯ git log -1 --oneline</text>
+    <text x="174" y="6120" class="mono fg code">{{LAST_COMMIT_SHA}}  {{LAST_COMMIT_MSG}}</text>
+    <text x="174" y="6170" class="mono dim code">committed {{LAST_COMMIT_DATE}}</text>
+    <line x1="142" y1="6260" x2="1298" y2="6260" class="rule"/>
+    <text x="142" y="6350" class="mono dim metricLabel">STATUS</text><text x="410" y="6350" class="mono green metricValue">BUILDING · REFINING · RELEASING</text>
+    <text x="142" y="6450" class="sans muted body">Native Windows benchmark analysis for NVIDIA FrameView captures and NVIDIA App logs.</text>
+    <text x="142" y="6502" class="sans muted bodySmall">Telemetry is generated from the repository itself, not a third-party badge service.</text>
   </g>
 
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="11.8s" dur=".55s" fill="freeze"/>
-    <line x1="112" y1="6920" x2="1328" y2="6920" class="rule"/>
-    <text x="112" y="6990" class="mono dim footer">PROFILE INTERFACE / PURE BLACK / LIQUID GLASS / LIVE TELEMETRY</text>
-    <text x="1328" y="6990" class="mono dim footer" text-anchor="end">GITHUB.COM/STRECKERMX</text>
-    <circle cx="112" cy="7062" r="6" fill="#76B900" filter="url(#glow)"/>
-    <text x="140" y="7070" class="mono green top">still building</text>
+    <line x1="112" y1="6870" x2="1328" y2="6870" class="rule"/>
+    <text x="112" y="6950" class="mono dim footer">PROFILE INTERFACE / WINDOWS TERMINAL / TRANSPARENT SHELL / LIVE TELEMETRY</text>
+    <text x="1328" y="6950" class="mono dim footer" text-anchor="end">GITHUB.COM/STRECKERMX</text>
+    <circle cx="112" cy="7020" r="6" fill="#76B900" filter="url(#glow)"/>
+    <text x="140" y="7028" class="mono green ps">still building</text>
   </g>
 </svg>

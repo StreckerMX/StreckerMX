@@ -9,6 +9,7 @@ on:
       - main
     paths:
       - ".github/scripts/profile_v3.py"
+      - ".github/scripts/apply_profile_tuning.py"
       - ".github/workflows/update-profile.yml"
 
 permissions:
@@ -32,21 +33,24 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Apply approved profile layout tuning
+        run: python .github/scripts/apply_profile_tuning.py
+
       - name: Generate live profile SVG
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python .github/scripts/profile_v3.py
 
-      - name: Commit changed telemetry
+      - name: Commit changed profile
         shell: bash
         run: |
-          if git diff --quiet -- assets/profile-hero.svg; then
-            echo "Profile telemetry is already current."
+          if git diff --quiet -- .github/scripts/profile_v3.py assets/profile-hero.svg; then
+            echo "Profile is already current."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/profile-hero.svg
-          git commit -m "chore: refresh profile telemetry"
+          git add .github/scripts/profile_v3.py assets/profile-hero.svg
+          git commit -m "chore: compact profile layout"
           git push

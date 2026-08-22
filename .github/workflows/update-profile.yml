@@ -9,6 +9,7 @@ on:
       - main
     paths:
       - ".github/scripts/profile_v3.py"
+      - ".github/scripts/enhance_scans.py"
       - ".github/workflows/update-profile.yml"
 
 permissions:
@@ -36,6 +37,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python .github/scripts/profile_v3.py
+
+      - name: Increase scan cadence
+        run: python .github/scripts/enhance_scans.py
 
       - name: Commit changed telemetry
         shell: bash

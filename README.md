@@ -1,72 +1,76 @@
 <div align="center">
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0D1117,45:11180D,100:76B900&text=Strecker&fontColor=FFFFFF&fontSize=54&fontAlignY=38&desc=Windows%20tools%20%E2%80%A2%20Performance%20analysis%20%E2%80%A2%20Automation%20%E2%80%A2%20Local%20AI&descAlignY=60&animation=fadeIn" />
-
-<a href="https://github.com/StreckerMX/FrameView-Analyzer">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=19&pause=1200&color=76B900&center=true&vCenter=true&width=820&lines=Building+fast%2C+practical+Windows+software.;Performance+analysis+without+spreadsheet+pain.;C%23+%2F+.NET+10+%E2%80%A2+WPF+%E2%80%A2+FrameView+Analyzer." alt="Typing SVG" />
-</a>
-
-<br>
-
-<img src="https://komarev.com/ghpvc/?username=StreckerMX&style=for-the-badge&color=76B900&label=PROFILE+VIEWS" alt="Profile views" />
-
+  <img src="./assets/profile-hero.svg" width="100%" alt="Strecker developer profile" />
 </div>
 
-## About
+## About me
 
-I build practical Windows software focused on **performance analysis, automation, data visualization, and local AI workflows**.
+I build practical software with an emphasis on **Windows desktop development, performance analysis, automation, data visualization, and local AI workflows**.
 
-My main public project is **FrameView Analyzer**, a native Windows application for turning NVIDIA FrameView and NVIDIA App performance logs into an interactive benchmark workspace.
+I like software that feels fast, explains itself clearly, and turns noisy technical data into something useful.
 
-## Tech stack
+## What I work on
 
-<div align="center">
+<table>
+<tr>
+<td width="33%" valign="top">
 
-![C#](https://img.shields.io/badge/C%23-76B900?style=for-the-badge&logo=dotnet&logoColor=black)
-![.NET](https://img.shields.io/badge/.NET_10-76B900?style=for-the-badge&logo=dotnet&logoColor=black)
-![WPF](https://img.shields.io/badge/WPF-Windows-76B900?style=for-the-badge&logo=windows11&logoColor=black)
-![ScottPlot](https://img.shields.io/badge/ScottPlot-5-76B900?style=for-the-badge&logoColor=black)
-![xUnit](https://img.shields.io/badge/xUnit-Tests-76B900?style=for-the-badge&logoColor=black)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-76B900?style=for-the-badge&logo=githubactions&logoColor=black)
+### Windows software
+Native desktop tools with responsive interfaces, careful UX, and a preference for doing the heavy lifting without getting in the user's way.
 
-</div>
+</td>
+<td width="33%" valign="top">
 
-## FrameView Analyzer
+### Performance & data
+Benchmarking, telemetry, visualization, filtering, and workflows that make performance data easier to inspect and compare.
 
-<div align="center">
+</td>
+<td width="34%" valign="top">
 
-<a href="https://github.com/StreckerMX/FrameView-Analyzer">
-  <img src="https://raw.githubusercontent.com/StreckerMX/FrameView-Analyzer/main/docs/screenshots/analysis-dark.webp" alt="FrameView Analyzer" width="100%" />
-</a>
+### Automation & AI
+Developer automation, repeatable workflows, and practical local-AI tooling aimed at reducing repetitive work.
 
-<br><br>
+</td>
+</tr>
+</table>
 
-[![Release](https://img.shields.io/github/v/release/StreckerMX/FrameView-Analyzer?style=for-the-badge&label=Latest%20Release&color=76B900)](https://github.com/StreckerMX/FrameView-Analyzer/releases/latest)
-[![License](https://img.shields.io/github/license/StreckerMX/FrameView-Analyzer?style=for-the-badge&color=76B900)](https://github.com/StreckerMX/FrameView-Analyzer/blob/main/LICENSE)
-[![Stars](https://img.shields.io/github/stars/StreckerMX/FrameView-Analyzer?style=for-the-badge&color=76B900)](https://github.com/StreckerMX/FrameView-Analyzer/stargazers)
+## Toolbox
 
-</div>
+<p align="center">
+  <img src="https://img.shields.io/badge/C%23-161B22?style=flat-square&logo=dotnet&logoColor=76B900" alt="C#" />
+  <img src="https://img.shields.io/badge/.NET-161B22?style=flat-square&logo=dotnet&logoColor=76B900" alt=".NET" />
+  <img src="https://img.shields.io/badge/WPF-161B22?style=flat-square&logo=windows11&logoColor=76B900" alt="WPF" />
+  <img src="https://img.shields.io/badge/Python-161B22?style=flat-square&logo=python&logoColor=76B900" alt="Python" />
+  <img src="https://img.shields.io/badge/PowerShell-161B22?style=flat-square&logo=powershell&logoColor=76B900" alt="PowerShell" />
+  <img src="https://img.shields.io/badge/GitHub_Actions-161B22?style=flat-square&logo=githubactions&logoColor=76B900" alt="GitHub Actions" />
+</p>
 
-FrameView Analyzer is a native **Windows / .NET 10** desktop application for analyzing and comparing **NVIDIA FrameView captures** and **NVIDIA App performance-overlay logs**.
+## Featured work
 
-### Highlights
+### FrameView Analyzer
 
-- **Pair and Multi comparison** for comparing individual runs or 2–8 benchmarks as equal peers.
-- **Interactive performance charts** with metric switching, hover inspection, zoom, pan, and visible-range statistics.
-- **Capture filtering** for trimming edges, isolating GPU-active regions, and excluding loading screens or FPS cullers.
-- **Benchmark Library** for organizing captures, metadata, notes, tags, and comparison workflows.
-- **Presentation-ready PNG reports** with selectable benchmarks, metrics, and report titles.
-- **Self-contained Windows x64 releases** with no separate .NET runtime installation required.
+A native **Windows / .NET 10** application for analyzing and comparing NVIDIA FrameView captures and NVIDIA App performance logs. It focuses on interactive performance analysis, clear comparisons, useful filtering, and exportable reports.
 
-<div align="center">
+<p align="center">
+  <a href="https://github.com/StreckerMX/FrameView-Analyzer">
+    <img src="https://raw.githubusercontent.com/StreckerMX/FrameView-Analyzer/main/docs/screenshots/analysis-dark.webp" width="92%" alt="FrameView Analyzer" />
+  </a>
+</p>
 
-### Explore the project
+<p align="center">
+  <a href="https://github.com/StreckerMX/FrameView-Analyzer/releases/latest"><img src="https://img.shields.io/github/v/release/StreckerMX/FrameView-Analyzer?style=flat-square&label=release&color=76B900&labelColor=0D1117" alt="Latest release" /></a>
+  <a href="https://github.com/StreckerMX/FrameView-Analyzer"><img src="https://img.shields.io/badge/source-GitHub-161B22?style=flat-square&logo=github&logoColor=76B900" alt="Source code" /></a>
+  <a href="https://github.com/StreckerMX/FrameView-Analyzer/blob/main/LICENSE"><img src="https://img.shields.io/github/license/StreckerMX/FrameView-Analyzer?style=flat-square&color=161B22&labelColor=0D1117" alt="License" /></a>
+</p>
 
-[![Source](https://img.shields.io/badge/Source-Code-0D1117?style=for-the-badge&logo=github&logoColor=76B900)](https://github.com/StreckerMX/FrameView-Analyzer)
-[![Download](https://img.shields.io/badge/Download-Latest_Release-76B900?style=for-the-badge&logo=windows11&logoColor=black)](https://github.com/StreckerMX/FrameView-Analyzer/releases/latest)
+## What I care about
 
-<br><br>
+- **Measurable performance** instead of vague impressions.
+- **Clear interfaces** that keep technical complexity under control.
+- **Predictable behavior** and reliable tooling over clever tricks.
+- **Automation with a purpose**, especially when it removes repetitive work.
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=110&section=footer&color=0:76B900,50:11180D,100:0D1117" />
+---
 
-</div>
+<p align="center">
+  <sub>Building, measuring, refining.</sub>
+</p>

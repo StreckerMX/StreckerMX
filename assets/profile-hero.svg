@@ -1,38 +1,46 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="7200" viewBox="0 0 1440 7200" role="img" aria-labelledby="title desc">
   <title id="title">Strecker developer profile</title>
-  <desc id="desc">A long dark developer profile designed like a technical landing page, with one-time reveals and a subtle continuous green scan.</desc>
+  <desc id="desc">A long black developer profile with macOS-inspired liquid-glass terminals, live GitHub telemetry, one-time reveals, and a subtle green scan.</desc>
 
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#07090C"/>
-      <stop offset=".50" stop-color="#0D1117"/>
-      <stop offset="1" stop-color="#0B100B"/>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#192027" stop-opacity="0.68"/>
+      <stop offset="0.42" stop-color="#10161C" stop-opacity="0.58"/>
+      <stop offset="1" stop-color="#090D11" stop-opacity="0.48"/>
     </linearGradient>
-    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#12171D"/>
-      <stop offset="1" stop-color="#0D1116"/>
+    <linearGradient id="glassHighlight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="0.28" stop-color="#FFFFFF" stop-opacity="0.025"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#76B900" stop-opacity="0"/>
-      <stop offset=".42" stop-color="#76B900" stop-opacity=".018"/>
-      <stop offset=".50" stop-color="#76B900" stop-opacity=".10"/>
-      <stop offset=".58" stop-color="#76B900" stop-opacity=".018"/>
+      <stop offset="0.38" stop-color="#76B900" stop-opacity="0.015"/>
+      <stop offset="0.5" stop-color="#76B900" stop-opacity="0.13"/>
+      <stop offset="0.62" stop-color="#76B900" stop-opacity="0.015"/>
       <stop offset="1" stop-color="#76B900" stop-opacity="0"/>
     </linearGradient>
+    <radialGradient id="ambient" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#76B900" stop-opacity="0.055"/>
+      <stop offset="1" stop-color="#76B900" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#000000" flood-opacity="0.72"/>
+    </filter>
     <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="7" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <style>
       .sans { font-family: Inter, "Segoe UI", Arial, sans-serif; }
       .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-      .fg { fill:#F2F5F7; }
-      .muted { fill:#9AA6B2; }
-      .dim { fill:#65727E; }
+      .fg { fill:#F4F6F8; }
+      .muted { fill:#A1ACB7; }
+      .dim { fill:#68737E; }
       .green { fill:#76B900; }
-      .rule { stroke:#252C33; stroke-width:1.5; }
-      .panel { fill:url(#panel); stroke:#252C33; stroke-width:1.5; }
-      .eyebrow { font-size:20px; letter-spacing:.18em; }
+      .rule { stroke:#FFFFFF; stroke-opacity:.075; stroke-width:1.5; }
+      .glass { fill:url(#glass); stroke:#FFFFFF; stroke-opacity:.115; stroke-width:1.4; filter:url(#shadow); }
+      .glassSheen { fill:url(#glassHighlight); pointer-events:none; }
       .top { font-size:22px; }
       .hero { font-size:92px; font-weight:720; letter-spacing:-.025em; }
       .heroSub { font-size:27px; letter-spacing:.10em; }
@@ -40,7 +48,8 @@
       .sectionNo { font-size:18px; letter-spacing:.20em; }
       .sectionTitle { font-size:48px; font-weight:660; }
       .sectionIntro { font-size:28px; }
-      .cardTitle { font-size:21px; letter-spacing:.14em; }
+      .windowTitle { font-size:18px; letter-spacing:.06em; }
+      .eyebrow { font-size:20px; letter-spacing:.16em; }
       .cardHeading { font-size:33px; font-weight:620; }
       .body { font-size:27px; }
       .bodySmall { font-size:24px; }
@@ -48,6 +57,7 @@
       .codeText { font-size:25px; }
       .metricLabel { font-size:19px; letter-spacing:.12em; }
       .metricValue { font-size:28px; font-weight:620; }
+      .metricBig { font-size:36px; font-weight:680; }
       .footer { font-size:18px; letter-spacing:.13em; }
     </style>
 
@@ -57,208 +67,149 @@
     <clipPath id="type4"><rect x="144" y="728" width="0" height="45"><animate attributeName="width" from="0" to="920" begin="3.5s" dur="1.35s" fill="freeze"/></rect></clipPath>
   </defs>
 
-  <rect width="1440" height="7200" rx="34" fill="url(#bg)"/>
-  <rect x="2" y="2" width="1436" height="7196" rx="32" fill="none" stroke="#76B900" stroke-opacity=".14" stroke-width="2"/>
-  <rect x="28" y="28" width="1384" height="7144" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity=".045"/>
+  <rect width="1440" height="7200" rx="34" fill="#000000"/>
+  <rect x="2" y="2" width="1436" height="7196" rx="32" fill="none" stroke="#76B900" stroke-opacity=".11" stroke-width="2"/>
+  <rect x="28" y="28" width="1384" height="7144" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity=".04"/>
 
-  <rect x="0" y="-520" width="1440" height="520" fill="url(#scan)">
-    <animate attributeName="y" from="-520" to="7720" dur="28s" repeatCount="indefinite"/>
+  <ellipse cx="1120" cy="390" rx="520" ry="360" fill="url(#ambient)"/>
+  <ellipse cx="240" cy="3560" rx="500" ry="680" fill="url(#ambient)" opacity=".45"/>
+  <rect x="0" y="-560" width="1440" height="560" fill="url(#scan)">
+    <animate attributeName="y" from="-560" to="7760" dur="30s" repeatCount="indefinite"/>
   </rect>
 
-  <circle cx="72" cy="68" r="7" fill="#374151"/>
-  <circle cx="100" cy="68" r="7" fill="#2E3A46"/>
-  <circle cx="128" cy="68" r="7" fill="#23303B"/>
+  <circle cx="72" cy="68" r="7" fill="#374151"/><circle cx="100" cy="68" r="7" fill="#2E3A46"/><circle cx="128" cy="68" r="7" fill="#23303B"/>
   <text x="174" y="76" class="mono muted top">strecker@github: ~/profile</text>
   <circle cx="1190" cy="68" r="7" fill="#76B900" filter="url(#glow)"/>
   <text x="1212" y="76" class="mono green top">ONLINE</text>
-  <text x="1360" y="76" class="mono dim top" text-anchor="end">v6.0</text>
+  <text x="1360" y="76" class="mono dim top" text-anchor="end">v7.0</text>
   <line x1="66" y1="110" x2="1374" y2="110" class="rule"/>
 
-  <g opacity="0">
-    <animate attributeName="opacity" from="0" to="1" begin="0s" dur=".45s" fill="freeze"/>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0s" dur=".45s" fill="freeze"/>
     <text x="112" y="262" class="sans fg hero">Strecker</text>
     <rect x="114" y="292" width="190" height="10" rx="5" fill="#76B900"/>
     <text x="112" y="374" class="mono muted heroSub">WINDOWS SOFTWARE / PERFORMANCE / AUTOMATION / LOCAL AI</text>
     <text x="112" y="452" class="sans muted lead">Practical software. Measurable performance. Clear interfaces.</text>
   </g>
-
   <text x="112" y="584" class="mono green codePrompt" clip-path="url(#type1)">$ whoami</text>
   <text x="144" y="636" class="mono muted codeText" clip-path="url(#type2)">developer building fast, practical desktop tools and technical workflows</text>
   <text x="112" y="706" class="mono green codePrompt" clip-path="url(#type3)">$ status --current</text>
   <text x="144" y="758" class="mono muted codeText" clip-path="url(#type4)">building · measuring · refining · shipping</text>
-
   <line x1="112" y1="878" x2="1328" y2="878" class="rule"/>
 
-  <g opacity="0">
-    <animate attributeName="opacity" from="0" to="1" begin="4.8s" dur=".55s" fill="freeze"/>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="4.8s" dur=".55s" fill="freeze"/>
     <text x="112" y="982" class="mono green sectionNo">01 / IDENTITY</text>
     <text x="112" y="1050" class="sans fg sectionTitle">What I build</text>
     <text x="112" y="1110" class="sans muted sectionIntro">Desktop software and workflows where performance, clarity, and repeatability matter.</text>
-
-    <rect x="112" y="1200" width="580" height="510" rx="22" class="panel"/>
-    <text x="150" y="1250" class="mono dim cardTitle">WINDOWS SOFTWARE</text>
-    <line x1="150" y1="1278" x2="654" y2="1278" class="rule"/>
-    <text x="150" y="1348" class="sans fg cardHeading">Native desktop tools</text>
-    <text x="150" y="1404" class="sans muted body">Responsive interfaces, careful UX,</text>
-    <text x="150" y="1446" class="sans muted body">predictable behavior, and useful</text>
-    <text x="150" y="1488" class="sans muted body">technical depth without clutter.</text>
-    <text x="150" y="1588" class="mono dim metricLabel">PRIMARY</text>
-    <text x="330" y="1588" class="mono fg metricValue">C# / .NET</text>
-    <text x="150" y="1640" class="mono dim metricLabel">UI</text>
-    <text x="330" y="1640" class="mono fg metricValue">WPF / Windows</text>
-
-    <rect x="748" y="1200" width="580" height="510" rx="22" class="panel"/>
-    <text x="786" y="1250" class="mono dim cardTitle">ENGINEERING STYLE</text>
-    <line x1="786" y1="1278" x2="1290" y2="1278" class="rule"/>
-    <text x="786" y="1348" class="sans fg cardHeading">Fast, clear, measurable</text>
-    <circle cx="794" cy="1412" r="5" fill="#76B900"/>
-    <text x="820" y="1422" class="sans muted body">Measure before guessing</text>
-    <circle cx="794" cy="1474" r="5" fill="#76B900"/>
-    <text x="820" y="1484" class="sans muted body">Make complexity readable</text>
-    <circle cx="794" cy="1536" r="5" fill="#76B900"/>
-    <text x="820" y="1546" class="sans muted body">Automate repetitive work</text>
-    <circle cx="794" cy="1598" r="5" fill="#76B900"/>
-    <text x="820" y="1608" class="sans muted body">Prefer reliability over tricks</text>
+    <rect x="112" y="1200" width="1216" height="560" rx="28" class="glass"/>
+    <rect x="112" y="1200" width="1216" height="560" rx="28" class="glassSheen"/>
+    <circle cx="152" cy="1242" r="9" fill="#FF5F57"/><circle cx="182" cy="1242" r="9" fill="#FEBC2E"/><circle cx="212" cy="1242" r="9" fill="#28C840"/>
+    <text x="258" y="1250" class="mono dim windowTitle">identity — zsh</text>
+    <line x1="140" y1="1280" x2="1300" y2="1280" class="rule"/>
+    <text x="150" y="1360" class="mono green codePrompt">$ build --target windows</text>
+    <text x="182" y="1418" class="mono muted codeText">native desktop tools · responsive interfaces · careful UX</text>
+    <text x="150" y="1500" class="mono green codePrompt">$ priorities</text>
+    <text x="182" y="1558" class="mono muted codeText">predictable behavior · readable complexity · measurable results</text>
+    <text x="150" y="1662" class="mono dim metricLabel">PRIMARY</text><text x="380" y="1662" class="mono fg metricValue">C# / .NET</text>
+    <text x="780" y="1662" class="mono dim metricLabel">UI</text><text x="930" y="1662" class="mono fg metricValue">WPF / Windows</text>
   </g>
 
-  <line x1="112" y1="1828" x2="1328" y2="1828" class="rule"/>
+  <line x1="112" y1="1878" x2="1328" y2="1878" class="rule"/>
 
-  <g opacity="0">
-    <animate attributeName="opacity" from="0" to="1" begin="6.0s" dur=".55s" fill="freeze"/>
-    <text x="112" y="1932" class="mono green sectionNo">02 / FOCUS</text>
-    <text x="112" y="2000" class="sans fg sectionTitle">Where I spend my time</text>
-    <text x="112" y="2060" class="sans muted sectionIntro">The same themes keep showing up across the tools I build.</text>
-
-    <rect x="112" y="2150" width="1216" height="230" rx="22" class="panel"/>
-    <text x="150" y="2202" class="mono dim cardTitle">PERFORMANCE + DATA</text>
-    <text x="150" y="2272" class="sans fg cardHeading">Benchmarking, telemetry, filtering, visualization</text>
-    <text x="150" y="2328" class="sans muted body">Turn noisy technical data into something you can inspect, compare, and trust.</text>
-
-    <rect x="112" y="2430" width="1216" height="230" rx="22" class="panel"/>
-    <text x="150" y="2482" class="mono dim cardTitle">AUTOMATION</text>
-    <text x="150" y="2552" class="sans fg cardHeading">Repeatable workflows instead of repeated effort</text>
-    <text x="150" y="2608" class="sans muted body">Developer automation, scripts, CI, and practical AI tooling that remove friction.</text>
-
-    <rect x="112" y="2710" width="1216" height="230" rx="22" class="panel"/>
-    <text x="150" y="2762" class="mono dim cardTitle">INTERFACE DESIGN</text>
-    <text x="150" y="2832" class="sans fg cardHeading">Technical software should still feel polished</text>
-    <text x="150" y="2888" class="sans muted body">Information hierarchy, responsive layouts, and visual feedback are part of engineering.</text>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="6.0s" dur=".55s" fill="freeze"/>
+    <text x="112" y="1982" class="mono green sectionNo">02 / FOCUS</text>
+    <text x="112" y="2050" class="sans fg sectionTitle">Where I spend my time</text>
+    <text x="112" y="2110" class="sans muted sectionIntro">The same themes keep showing up across the tools I build.</text>
+    <rect x="112" y="2200" width="1216" height="760" rx="28" class="glass"/>
+    <rect x="112" y="2200" width="1216" height="760" rx="28" class="glassSheen"/>
+    <circle cx="152" cy="2242" r="9" fill="#FF5F57"/><circle cx="182" cy="2242" r="9" fill="#FEBC2E"/><circle cx="212" cy="2242" r="9" fill="#28C840"/>
+    <text x="258" y="2250" class="mono dim windowTitle">focus.list — terminal</text>
+    <line x1="140" y1="2280" x2="1300" y2="2280" class="rule"/>
+    <text x="150" y="2370" class="mono green eyebrow">PERFORMANCE + DATA</text>
+    <text x="150" y="2430" class="sans fg cardHeading">Benchmarking, telemetry, filtering, visualization</text>
+    <text x="150" y="2484" class="sans muted body">Turn noisy technical data into something you can inspect, compare, and trust.</text>
+    <text x="150" y="2610" class="mono green eyebrow">AUTOMATION</text>
+    <text x="150" y="2670" class="sans fg cardHeading">Repeatable workflows instead of repeated effort</text>
+    <text x="150" y="2724" class="sans muted body">Scripts, CI, and practical AI tooling that remove friction from development.</text>
+    <text x="150" y="2850" class="mono green eyebrow">INTERFACE DESIGN</text>
+    <text x="150" y="2910" class="sans fg cardHeading">Technical software should still feel polished</text>
   </g>
 
-  <line x1="112" y1="3058" x2="1328" y2="3058" class="rule"/>
+  <line x1="112" y1="3078" x2="1328" y2="3078" class="rule"/>
 
-  <g opacity="0">
-    <animate attributeName="opacity" from="0" to="1" begin="7.4s" dur=".55s" fill="freeze"/>
-    <text x="112" y="3162" class="mono green sectionNo">03 / TOOLBOX</text>
-    <text x="112" y="3230" class="sans fg sectionTitle">Tools I reach for</text>
-    <text x="112" y="3290" class="sans muted sectionIntro">A compact stack for desktop work, automation, testing, and delivery.</text>
-
-    <rect x="112" y="3380" width="1216" height="620" rx="22" class="panel"/>
-    <text x="150" y="3432" class="mono dim cardTitle">CORE STACK</text>
-    <line x1="150" y1="3460" x2="1290" y2="3460" class="rule"/>
-
-    <text x="150" y="3545" class="mono dim metricLabel">LANGUAGE</text>
-    <text x="410" y="3545" class="mono fg metricValue">C#</text>
-    <text x="150" y="3615" class="mono dim metricLabel">RUNTIME</text>
-    <text x="410" y="3615" class="mono fg metricValue">.NET 10</text>
-    <text x="150" y="3685" class="mono dim metricLabel">DESKTOP UI</text>
-    <text x="410" y="3685" class="mono fg metricValue">WPF</text>
-    <text x="150" y="3755" class="mono dim metricLabel">AUTOMATION</text>
-    <text x="410" y="3755" class="mono fg metricValue">Python · PowerShell</text>
-    <text x="150" y="3825" class="mono dim metricLabel">DELIVERY</text>
-    <text x="410" y="3825" class="mono fg metricValue">GitHub Actions · Releases</text>
-    <text x="150" y="3895" class="mono dim metricLabel">AI WORKFLOWS</text>
-    <text x="410" y="3895" class="mono green metricValue">Local models · API-assisted development</text>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="7.4s" dur=".55s" fill="freeze"/>
+    <text x="112" y="3182" class="mono green sectionNo">03 / TOOLBOX</text>
+    <text x="112" y="3250" class="sans fg sectionTitle">Tools I reach for</text>
+    <text x="112" y="3310" class="sans muted sectionIntro">A compact stack for desktop work, automation, testing, and delivery.</text>
+    <rect x="112" y="3400" width="1216" height="720" rx="28" class="glass"/>
+    <rect x="112" y="3400" width="1216" height="720" rx="28" class="glassSheen"/>
+    <circle cx="152" cy="3442" r="9" fill="#FF5F57"/><circle cx="182" cy="3442" r="9" fill="#FEBC2E"/><circle cx="212" cy="3442" r="9" fill="#28C840"/>
+    <text x="258" y="3450" class="mono dim windowTitle">toolbox — system_profiler</text>
+    <line x1="140" y1="3480" x2="1300" y2="3480" class="rule"/>
+    <text x="150" y="3570" class="mono dim metricLabel">LANGUAGE</text><text x="420" y="3570" class="mono fg metricValue">C#</text>
+    <text x="150" y="3650" class="mono dim metricLabel">RUNTIME</text><text x="420" y="3650" class="mono fg metricValue">.NET 10</text>
+    <text x="150" y="3730" class="mono dim metricLabel">DESKTOP UI</text><text x="420" y="3730" class="mono fg metricValue">WPF</text>
+    <text x="150" y="3810" class="mono dim metricLabel">AUTOMATION</text><text x="420" y="3810" class="mono fg metricValue">Python · PowerShell</text>
+    <text x="150" y="3890" class="mono dim metricLabel">DELIVERY</text><text x="420" y="3890" class="mono fg metricValue">GitHub Actions · Releases</text>
+    <text x="150" y="3970" class="mono dim metricLabel">AI WORKFLOWS</text><text x="420" y="3970" class="mono green metricValue">Local models · API-assisted development</text>
   </g>
 
-  <line x1="112" y1="4128" x2="1328" y2="4128" class="rule"/>
+  <line x1="112" y1="4248" x2="1328" y2="4248" class="rule"/>
 
-  <g opacity="0">
-    <animate attributeName="opacity" from="0" to="1" begin="8.8s" dur=".55s" fill="freeze"/>
-    <text x="112" y="4232" class="mono green sectionNo">04 / WORKFLOW</text>
-    <text x="112" y="4300" class="sans fg sectionTitle">How I like to work</text>
-    <text x="112" y="4360" class="sans muted sectionIntro">Small feedback loops, measurable results, and less ceremony.</text>
-
-    <rect x="112" y="4450" width="280" height="420" rx="22" class="panel"/>
-    <text x="148" y="4502" class="mono green sectionNo">01</text>
-    <text x="148" y="4570" class="sans fg cardHeading">Inspect</text>
-    <text x="148" y="4630" class="sans muted bodySmall">Understand the</text>
-    <text x="148" y="4668" class="sans muted bodySmall">actual problem</text>
-    <text x="148" y="4706" class="sans muted bodySmall">before changing it.</text>
-
-    <rect x="424" y="4450" width="280" height="420" rx="22" class="panel"/>
-    <text x="460" y="4502" class="mono green sectionNo">02</text>
-    <text x="460" y="4570" class="sans fg cardHeading">Build</text>
-    <text x="460" y="4630" class="sans muted bodySmall">Prefer the simplest</text>
-    <text x="460" y="4668" class="sans muted bodySmall">solution that keeps</text>
-    <text x="460" y="4706" class="sans muted bodySmall">the behavior clear.</text>
-
-    <rect x="736" y="4450" width="280" height="420" rx="22" class="panel"/>
-    <text x="772" y="4502" class="mono green sectionNo">03</text>
-    <text x="772" y="4570" class="sans fg cardHeading">Measure</text>
-    <text x="772" y="4630" class="sans muted bodySmall">Test performance,</text>
-    <text x="772" y="4668" class="sans muted bodySmall">behavior, and UX</text>
-    <text x="772" y="4706" class="sans muted bodySmall">instead of assuming.</text>
-
-    <rect x="1048" y="4450" width="280" height="420" rx="22" class="panel"/>
-    <text x="1084" y="4502" class="mono green sectionNo">04</text>
-    <text x="1084" y="4570" class="sans fg cardHeading">Refine</text>
-    <text x="1084" y="4630" class="sans muted bodySmall">Remove friction,</text>
-    <text x="1084" y="4668" class="sans muted bodySmall">noise, and fragile</text>
-    <text x="1084" y="4706" class="sans muted bodySmall">edges before shipping.</text>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="8.8s" dur=".55s" fill="freeze"/>
+    <text x="112" y="4352" class="mono green sectionNo">04 / WORKFLOW</text>
+    <text x="112" y="4420" class="sans fg sectionTitle">How I like to work</text>
+    <text x="112" y="4480" class="sans muted sectionIntro">Small feedback loops, measurable results, and less ceremony.</text>
+    <rect x="112" y="4570" width="1216" height="620" rx="28" class="glass"/>
+    <rect x="112" y="4570" width="1216" height="620" rx="28" class="glassSheen"/>
+    <circle cx="152" cy="4612" r="9" fill="#FF5F57"/><circle cx="182" cy="4612" r="9" fill="#FEBC2E"/><circle cx="212" cy="4612" r="9" fill="#28C840"/>
+    <text x="258" y="4620" class="mono dim windowTitle">workflow — run.sh</text>
+    <line x1="140" y1="4650" x2="1300" y2="4650" class="rule"/>
+    <text x="150" y="4740" class="mono green codePrompt">01 inspect</text><text x="380" y="4740" class="mono muted codeText">understand the actual problem</text>
+    <text x="150" y="4830" class="mono green codePrompt">02 build</text><text x="380" y="4830" class="mono muted codeText">prefer the simplest clear solution</text>
+    <text x="150" y="4920" class="mono green codePrompt">03 measure</text><text x="380" y="4920" class="mono muted codeText">test performance, behavior, and UX</text>
+    <text x="150" y="5010" class="mono green codePrompt">04 refine</text><text x="380" y="5010" class="mono muted codeText">remove friction and fragile edges</text>
   </g>
 
-  <line x1="112" y1="4998" x2="1328" y2="4998" class="rule"/>
+  <line x1="112" y1="5318" x2="1328" y2="5318" class="rule"/>
 
-  <g opacity="0">
-    <animate attributeName="opacity" from="0" to="1" begin="10.2s" dur=".55s" fill="freeze"/>
-    <text x="112" y="5102" class="mono green sectionNo">05 / FEATURED WORK</text>
-    <text x="112" y="5170" class="sans fg sectionTitle">FrameView Analyzer</text>
-    <text x="112" y="5230" class="sans muted sectionIntro">A native Windows workspace for performance analysis and benchmark comparison.</text>
-
-    <rect x="112" y="5320" width="1216" height="760" rx="22" class="panel"/>
-    <text x="150" y="5372" class="mono dim cardTitle">PUBLIC PROJECT</text>
-    <text x="1290" y="5372" class="mono green cardTitle" text-anchor="end">ACTIVE</text>
-    <line x1="150" y1="5400" x2="1290" y2="5400" class="rule"/>
-
-    <text x="150" y="5485" class="sans fg cardHeading">Performance data without spreadsheet pain</text>
-    <text x="150" y="5550" class="sans muted body">Analyze NVIDIA FrameView captures and NVIDIA App performance logs,</text>
-    <text x="150" y="5592" class="sans muted body">compare runs, isolate noisy regions, organize captures, and export reports.</text>
-
-    <line x1="150" y1="5670" x2="1290" y2="5670" class="rule"/>
-    <text x="150" y="5745" class="mono dim metricLabel">PLATFORM</text>
-    <text x="410" y="5745" class="mono fg metricValue">Windows x64</text>
-    <text x="150" y="5815" class="mono dim metricLabel">STACK</text>
-    <text x="410" y="5815" class="mono fg metricValue">C# · .NET 10 · WPF</text>
-    <text x="150" y="5885" class="mono dim metricLabel">FOCUS</text>
-    <text x="410" y="5885" class="mono green metricValue">Performance + UX + visualization</text>
-    <text x="150" y="5955" class="mono dim metricLabel">STATUS</text>
-    <text x="410" y="5955" class="mono green metricValue">Building · refining · releasing</text>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="10.2s" dur=".55s" fill="freeze"/>
+    <text x="112" y="5422" class="mono green sectionNo">05 / LIVE PROJECT TELEMETRY</text>
+    <text x="112" y="5490" class="sans fg sectionTitle">FrameView Analyzer</text>
+    <text x="112" y="5550" class="sans muted sectionIntro">Real repository data, refreshed automatically by GitHub Actions.</text>
+    <rect x="112" y="5640" width="1216" height="1080" rx="28" class="glass"/>
+    <rect x="112" y="5640" width="1216" height="1080" rx="28" class="glassSheen"/>
+    <circle cx="152" cy="5682" r="9" fill="#FF5F57"/><circle cx="182" cy="5682" r="9" fill="#FEBC2E"/><circle cx="212" cy="5682" r="9" fill="#28C840"/>
+    <text x="258" y="5690" class="mono dim windowTitle">frameview-analyzer — live</text>
+    <text x="1290" y="5690" class="mono green windowTitle" text-anchor="end">SYNC 2026-08-22 UTC</text>
+    <line x1="140" y1="5720" x2="1300" y2="5720" class="rule"/>
+    <text x="150" y="5820" class="mono dim metricLabel">LATEST RELEASE</text>
+    <text x="150" y="5882" class="mono fg metricBig">v2.3.0</text>
+    <text x="520" y="5820" class="mono dim metricLabel">STARS</text>
+    <text x="520" y="5882" class="mono fg metricBig">2</text>
+    <text x="780" y="5820" class="mono dim metricLabel">CI</text>
+    <text x="780" y="5882" class="mono green metricBig">PASSING</text>
+    <text x="1060" y="5820" class="mono dim metricLabel">OPEN PRS</text>
+    <text x="1060" y="5882" class="mono fg metricBig">0</text>
+    <line x1="150" y1="5960" x2="1290" y2="5960" class="rule"/>
+    <text x="150" y="6045" class="mono dim metricLabel">PRIMARY LANGUAGE</text>
+    <text x="440" y="6045" class="mono fg metricValue">C#</text>
+    <text x="760" y="6045" class="mono dim metricLabel">RELEASE DATE</text>
+    <text x="1010" y="6045" class="mono fg metricValue">2026-08-19</text>
+    <text x="150" y="6170" class="mono green codePrompt">$ git log -1 --oneline</text>
+    <text x="182" y="6230" class="mono fg codeText">ef584d9  Release FrameView Analyzer 2.3.0 (#27)</text>
+    <text x="182" y="6282" class="mono dim codeText">committed 2026-08-19</text>
+    <line x1="150" y1="6370" x2="1290" y2="6370" class="rule"/>
+    <text x="150" y="6455" class="mono dim metricLabel">STATUS</text>
+    <text x="410" y="6455" class="mono green metricValue">BUILDING · REFINING · RELEASING</text>
+    <text x="150" y="6540" class="sans muted body">Native Windows benchmark analysis for NVIDIA FrameView captures and NVIDIA App logs.</text>
+    <text x="150" y="6590" class="sans muted body">The numbers above are generated from the repository itself, not a third-party badge service.</text>
   </g>
 
-  <line x1="112" y1="6210" x2="1328" y2="6210" class="rule"/>
-
-  <g opacity="0">
-    <animate attributeName="opacity" from="0" to="1" begin="11.6s" dur=".55s" fill="freeze"/>
-    <text x="112" y="6314" class="mono green sectionNo">06 / PRINCIPLES</text>
-    <text x="112" y="6382" class="sans fg sectionTitle">Things I care about</text>
-
-    <text x="112" y="6502" class="sans fg cardHeading">01.</text>
-    <text x="205" y="6502" class="sans muted body">Measurable performance instead of vague impressions.</text>
-    <text x="112" y="6590" class="sans fg cardHeading">02.</text>
-    <text x="205" y="6590" class="sans muted body">Clear interfaces that keep technical complexity under control.</text>
-    <text x="112" y="6678" class="sans fg cardHeading">03.</text>
-    <text x="205" y="6678" class="sans muted body">Predictable behavior and reliable tooling over clever tricks.</text>
-    <text x="112" y="6766" class="sans fg cardHeading">04.</text>
-    <text x="205" y="6766" class="sans muted body">Automation with a purpose, especially when it removes repeated work.</text>
-  </g>
-
-  <g opacity="0">
-    <animate attributeName="opacity" from="0" to="1" begin="12.8s" dur=".55s" fill="freeze"/>
-    <line x1="112" y1="6950" x2="1328" y2="6950" class="rule"/>
-    <text x="112" y="7020" class="mono dim footer">PROFILE INTERFACE / CUSTOM SVG / SINGLE-LOAD INTRO</text>
-    <text x="1328" y="7020" class="mono dim footer" text-anchor="end">GITHUB.COM/STRECKERMX</text>
-    <circle cx="112" cy="7090" r="6" fill="#76B900" filter="url(#glow)"/>
-    <text x="140" y="7098" class="mono green top">still building</text>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="11.8s" dur=".55s" fill="freeze"/>
+    <line x1="112" y1="6920" x2="1328" y2="6920" class="rule"/>
+    <text x="112" y="6990" class="mono dim footer">PROFILE INTERFACE / PURE BLACK / LIQUID GLASS / LIVE TELEMETRY</text>
+    <text x="1328" y="6990" class="mono dim footer" text-anchor="end">GITHUB.COM/STRECKERMX</text>
+    <circle cx="112" cy="7062" r="6" fill="#76B900" filter="url(#glow)"/>
+    <text x="140" y="7070" class="mono green top">still building</text>
   </g>
 </svg>

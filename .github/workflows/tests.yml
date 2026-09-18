@@ -1,0 +1,48 @@
+name: Profile generator tests
+
+# Deliberately separate from update-profile.yml.
+#
+# That workflow regenerates assets/profile-hero.svg and commits the result, so it needs
+# `contents: write`. These tests only read the repository and run entirely offline - the
+# suite stands up its own HTTP server instead of calling api.github.com - so they get
+# `contents: read` and no ability to modify what they are checking. Keeping the two apart
+# also means a red test cannot block the six-hourly telemetry refresh, and a failing
+# refresh cannot be confused with a failing suite.
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/scripts/profile_v3.py"
+      - ".github/scripts/github_api.py"
+      - ".github/scripts/nebula.py"
+      - "tests/**"
+      - ".github/workflows/tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-tests
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@v4
+
+      # Same interpreter the telemetry workflow generates with, so a test that passes here
+      # is a test of the version that actually writes the card.
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # No secrets and no network: every request in the suite goes to a local server.
+      - name: Run the generator test suite
+        run: python -m unittest discover -s tests -v

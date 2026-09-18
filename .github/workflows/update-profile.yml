@@ -9,6 +9,9 @@ on:
       - main
     paths:
       - ".github/scripts/profile_v3.py"
+      # profile_v3.py imports nebula.py, so a change to the backdrop alone has to
+      # regenerate the card too.
+      - ".github/scripts/nebula.py"
       - ".github/scripts/enhance_scans.py"
       - ".github/workflows/update-profile.yml"
 

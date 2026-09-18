@@ -1,0 +1,5 @@
+# profile_v3.py imports nebula.py, so running the generator - by hand or in the workflow -
+# leaves a bytecode cache behind. Nothing here is an artifact of this repository: the only
+# file the workflow ever writes is assets/profile-hero.svg.
+__pycache__/
+*.py[cod]
